@@ -1,0 +1,4 @@
+[(press){noteon:1,20,127}]
+[(init+)(noteon:1,93,*){state:0}]
+[(noteoff:1,93,*){state:1}]
+[(time){text:#B#}]

@@ -1,0 +1,83 @@
+[(init){showlist:#@Sets#,focus=#@SetText#}]
+
+- show Sets, focus on last selected text
+[(@SetText:*){showlist:#@Sets#,focus=#@SetText#}]
+
+- show Songs, with back items, and focus on first song
+[(@Songs:*){listoptions:useindex}{showlist:<,#@Songs#,<,focus=#@SongIndex+1#}{listoptions:usetext}]
+
+- show next song index
+[(@SongLoad:*){listoptions:useindex}{showlist:<,#@Songs#,<,focus=#@SongIndex+2#}{listoptions:usetext}]
+
+- On Set selection, load set of song list
+[(selectedfromlist:Funk Live){@SetIndex:#@e_selectedindex#}]
+[(selectedfromlist:A bosser){@SetIndex:#@e_selectedindex#}]
+[(selectedfromlist:All){@SetIndex:#@e_selectedindex#}]
+[(selectedfromlist:Live 1h){@SetIndex:#@e_selectedindex#}]
+[(selectedfromlist:Live 1h30){@SetIndex:#@e_selectedindex#}]
+[(selectedfromlist:Live Marins){@SetIndex:#@e_selectedindex#}]
+[(selectedfromlist:Live Castanet){@SetIndex:#@e_selectedindex#}]
+[(selectedfromlist:Live Combo){@SetIndex:#@e_selectedindex#}]
+
+[(selectedfromlist:Compos){@SetIndex:#@e_selectedindex#}]
+[(selectedfromlist:Reprises){@SetIndex:#@e_selectedindex#}]
+
+- On Song selecion
+[(selectedfromlist:All that I am){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Beast Inside){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Black Chandelier){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Californication){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Champagne Supernovae){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Chasing Cars){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Creep){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Drown into a bottle){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Falling down){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Feel good){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:From the ashes){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Get out){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:I kissed a girl){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Impossible high){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Late){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Learn the words){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Lonely boy){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Lost){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Lost & Found){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Lucky Jay){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Lucky man){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Lullaby){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Never Ready){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Opposites){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Origin of illness){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Plus one){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Ride){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Rising sun){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Rock and Roll Queen){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Run){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Someday){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Special K){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Stop to){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Waterfall){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Where is my mind){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Will not last){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:World is broken){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+
+- Funk songs
+[(selectedfromlist:Tripping Out){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Love and Happiness){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Cissy Strut){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Chameleon){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Play That Funky Music){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:The Chicken){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:1 Gimme Some More){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:2 Soul Power){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:3 House Party){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:It is On){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Tive Razao){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Use me){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Shaft){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Get up and stay){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Top of my head){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+
+- On back selection 
+[(selectedfromlist:<){showlist:#@Sets#,focus=#@SetText#}]
+

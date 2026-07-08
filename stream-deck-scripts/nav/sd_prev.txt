@@ -1,0 +1,2 @@
+[(init+)(@SongTextMLPrev:*){state:#@SongPrevOOL#}v{text:#@SongTextMLPrev#}]
+[(press){@Nav:Prev}]

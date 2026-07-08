@@ -1,0 +1,2 @@
+[(init+)(@SongTextMLNext:*){state:#@SongNextOOL#}{text:#@SongTextMLNext#}]
+[(press){@Nav:Next}]

@@ -1,0 +1,2 @@
+[(init+)(@SongText:*){text:#SUBSTITUTE(@SongText," ",CHAR(10))#}]
+[(press){@Profile:Songs}{@Profile:Browse}]

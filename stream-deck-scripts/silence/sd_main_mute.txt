@@ -1,0 +1,5 @@
+[(press){noteoff:5,122,0}]
+[(press){noteon:5,122,127}]
+[(noteoff:5,122,0){state:0}{nextpress:2}]
+[(noteon:5,122,1-127){state:1}{nextpress:1}{@t_mmtimer:restart}]
+[(@t_mmtimer:15000){noteon:5,122,127}]

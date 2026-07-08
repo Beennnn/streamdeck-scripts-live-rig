@@ -1,0 +1,6 @@
+(cp:1,0-15){@l_vu:#BITAND(@e_cpvalue,15)#}{vu:#@l_vu*16#}
+[(cc:12,0,*){vu:#@e_ccvalue#}]
+[(pb:1,*){fader:#@e_pbvalue*127/13984#}]
+[(noteon:1,64,127){icon:#none#}]
+[(noteon:1,64,64){icon:%plugin%/Images/checkbox_cleared.jpg,110}]
+[(press){noteon:1,0,127}]

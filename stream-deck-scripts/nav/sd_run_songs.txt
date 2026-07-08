@@ -1,0 +1,7 @@
+[(init+)(@SongTextML:*){text:#@SongTextML#}]
+[(@t_rs:400){@t_rs:reset}{@c:#@p+@r#}{@p:0}{@r:0}]
+[(press){@t_rs:run}{@p:#@p+1#}]
+[(release){@r:#IF(@p>0,@r+1,0)#}]
+[(@c:1){@Profile:Songs}{@c:0}]
+[(@c:2-99){@Nav:Run}{state:1}{@unset:1}{@c:0}]
+[(release){state:0}]

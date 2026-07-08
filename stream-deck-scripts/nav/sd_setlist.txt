@@ -1,0 +1,2 @@
+[(init+)(@SetText:*){text:#@SetText#}]
+[(press){@Profile:Sets}]

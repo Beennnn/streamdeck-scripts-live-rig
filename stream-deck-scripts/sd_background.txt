@@ -1,0 +1,396 @@
+- Init Event
+[(init)
+{@S_funk:
+Tripping Out,
+Love and Happiness,
+Cissy Strut,
+Chameleon,
+Play That Funky Music,
+The Chicken,
+1 Gimme Some More,
+2 Soul Power,
+3 House Party,
+It is On,
+Tive Razao,
+Use me,
+Shaft,
+Get up and stay,
+Top of my head,
+}
+{@LowerSounds:
+0=Organ Greasy,
+1=Piano Unreal Smash,
+2=Rhodes Crunchy,
+3=EP Jersey Vibe2,
+4=Wurlizer Funk,
+5=Clavinet Phaser,
+6=Vibanet,
+7=Strings Section,
+}
+{@UpperSounds:
+0=Brass Ensemble,
+1=Trumpet,
+2=Sax,
+3=Trombone,
+8=Woodwinds Ensemble,
+9=Piccolo,
+10=Flute,
+11=Bass Flute,
+16=Strings Ensemble,
+17=Violin,
+18=Viola,
+19=Cello,
+24=Sub37 Hack Saw,
+25=Lead Talkbox,
+26=Groovy Resomoog,
+27=GX-1 Sweepoid,
+28=Sub37 Vintage Sync Lead,
+29=Portahorn Lead,
+}
+
+
+{@S_aBosser:
+Lost,
+Rising sun,
+Waterfall,
+Origin of illness,
+Falling down,
+Drown into a bottle,
+Black Chandelier,
+Will not last,
+Feel good,
+Opposites,
+Get out,
+Lonely boy,
+Never Ready,
+Lost & Found,
+World is broken,
+From the ashes,
+Impossible high,
+Someday,
+Beast Inside,
+Plus one,
+All that I am,
+}
+
+{@S_all:
+All that I am,
+Beast Inside,
+Black Chandelier,
+Californication,
+Champagne Supernovae,
+Chasing Cars,
+Creep,
+Drown into a bottle,
+Falling down,
+Feel good,
+From the ashes,
+Get out,
+I kissed a girl,
+Impossible high,
+Late,
+Learn the words,
+Lonely boy,
+Lost,
+Lost & Found,
+Lucky Jay,
+Lucky man,
+Lullaby,
+Never Ready,
+Opposites,
+Origin of illness,
+Plus one,
+Ride,
+Rising sun,
+Rock and Roll Queen,
+Run,
+Someday,
+Special K,
+Stop to,
+Waterfall,
+Where is my mind,
+Will not last,
+World is broken,
+}
+
+{@S_compos:
+All that I am,
+Beast Inside,
+Drown into a bottle,
+Falling down,
+Feel good,
+From the ashes,
+Get out,
+Impossible high,
+Late,
+Learn the words,
+Lost,
+Lost & Found,
+Lucky Jay,
+Lullaby,
+Never Ready,
+Opposites,
+Rising sun,
+Run,
+Stop to,
+}
+
+{@S_reprises:
+Black Chandelier,
+Californication,
+Champagne Supernovae,
+Chasing Cars,
+Creep,
+I kissed a girl,
+Lonely boy,
+Lucky man,
+Origin of illness,
+Plus one,
+Ride,
+Rock and Roll Queen,
+Special K,
+Where is my mind,
+}
+
+{@S_1h:
+Lost,
+Falling down,
+Drown into a bottle,
+Rising sun,
+Never Ready,
+Get out,
+Opposites,
+Feel good,
+Will not last,
+Waterfall,
+From the ashes,
+Someday,
+World is broken,
+Lost & Found,
+Beast Inside,
+Ride,
+Lonely boy,
+Special K,
+Black Chandelier,
+Plus one,
+Rock and Roll Queen,
+}
+
+{@S_1h30:
+Lost,
+Rising sun,
+Origin of illness,
+Falling down,
+Drown into a bottle,
+Special K,
+Black Chandelier,
+Will not last,
+Feel good,
+Opposites,
+Ride,
+Lonely boy,
+Get out,
+Never Ready,
+Lost & Found,
+From the ashes,
+I kissed a girl,
+Impossible high,
+Waterfall,
+Someday,
+World is broken,
+Beast Inside,
+All that I am,
+Plus one,
+Rock and Roll Queen,
+Californication,
+Where is my mind,
+}
+
+{@S_marins:
+Lost,
+Rising sun,
+Falling down,
+Drown into a bottle,
+Will not last,
+Feel good,
+Opposites,
+Get out,
+Waterfall,
+Never Ready,
+Lost & Found,
+World is broken,
+From the ashes,
+Impossible high,
+Someday,
+Beast Inside,
+All that I am,
+Origin of illness,
+Plus one,
+}
+
+{@S_castanet:
+Lost,
+Rising sun,
+Falling down,
+Drown into a bottle,
+Will not last,
+Feel good,
+Opposites,
+Get out,
+Waterfall,
+Never Ready,
+Lost & Found,
+World is broken,
+From the ashes,
+Someday,
+Beast Inside,
+All that I am,
+}
+
+{@S_combo:
+Lost,
+Rising sun,
+Origin of illness,
+Falling down,
+Drown into a bottle,
+Black Chandelier,
+Will not last,
+Feel good,
+Opposites,
+Get out,
+Waterfall,
+Lonely boy,
+Never Ready,
+Lost & Found,
+World is broken,
+From the ashes,
+Impossible high,
+Someday,
+Beast Inside,
+Plus one,
+All that I am,
+}
+
+{@Sets:
+Funk Live,
+E_A bosser,
+E_All,
+E_Compos,
+E_Reprises,
+E_Live 1h,
+E_Live 1h30,
+E_Live Marins,
+E_Live Castanet,
+E_Live Combo,
+}
+
+-- Default Songs
+{@SetIndex:1}{@Profile:Config}
+]
+
+- Name sets and map sets to songs
+
+- Funk
+[(@SetText:"Funk Live"){@Songs:#@S_funk#}]
+
+[(@SetText:"Evy_A bosser"){@Songs:#@S_aBosser#}]
+[(@SetText:"E_All"){@Songs:#@S_all#}]
+[(@SetText:"E_Live 1h"){@Songs:#@S_1h#}]
+[(@SetText:"E_Live 1h30"){@Songs:#@S_1h30#}]
+[(@SetText:"E_Live Marins"){@Songs:#@S_marins#}]
+[(@SetText:"E_Live Castanet"){@Songs:#@S_castanet#}]
+[(@SetText:"E_Live Combo"){@Songs:#@S_combo#}]
+[(@SetText:"E_Compos"){@Songs:#@S_compos#}]
+[(@SetText:"E_Reprises"){@Songs:#@S_reprises#}]
+
+- Map songs to Ableton CC
+
+- Funk
+[(@SongText:"Tripping Out"){@SongCC:4}]
+[(@SongText:"Love and Happiness"){@SongCC:5}]
+[(@SongText:"Cissy Strut"){@SongCC:6}]
+[(@SongText:"Chameleon"){@SongCC:7}]
+[(@SongText:"Play That Funky Music"){@SongCC:8}]
+[(@SongText:"Chicken"){@SongCC:9}]
+[(@SongText:"1 Gimme Some More"){@SongCC:10}]
+[(@SongText:"2 Soul Power"){@SongCC:11}]
+[(@SongText:"3 House Party"){@SongCC:12}]
+[(@SongText:"It is On"){@SongCC:13}]
+[(@SongText:"Tive Razao"){@SongCC:14}]
+
+- Evt
+- Map songs to Ableton CC
+[(@SongText:"All that I am"){@SongCC:4}]
+[(@SongText:"Beast Inside"){@SongCC:22}]
+[(@SongText:"All that I am"){@SongCC:4}]
+[(@SongText:"Beast Inside"){@SongCC:22}]
+[(@SongText:"Black Chandelier"){@SongCC:32}]
+[(@SongText:"Californication"){@SongCC:27}]
+[(@SongText:"Champagne Supernovae"){@SongCC:25}]
+[(@SongText:"Chasing Cars"){@SongCC:33}]
+[(@SongText:"Creep"){@SongCC:26}]
+[(@SongText:"Drown into a bottle"){@SongCC:8}]
+[(@SongText:"Falling down"){@SongCC:12}]
+[(@SongText:"Feel good"){@SongCC:16}]
+[(@SongText:"From the ashes"){@SongCC:17}]
+[(@SongText:"Get out"){@SongCC:13}]
+[(@SongText:"I kissed a girl"){@SongCC:36}]
+[(@SongText:"Impossible high"){@SongCC:5}]
+[(@SongText:"Late"){@SongCC:39}]
+[(@SongText:"Learn the words"){@SongCC:37}]
+[(@SongText:"Lonely boy"){@SongCC:34}]
+[(@SongText:"Lost"){@SongCC:10}]
+[(@SongText:"Lost & Found"){@SongCC:7}]
+[(@SongText:"Lucky Jay"){@SongCC:38}]
+[(@SongText:"Lucky man"){@SongCC:28}]
+[(@SongText:"Lullaby"){@SongCC:18}]
+[(@SongText:"Never Ready"){@SongCC:9}]
+[(@SongText:"Opposites"){@SongCC:15}]
+[(@SongText:"Origin of illness"){@SongCC:30}]
+[(@SongText:"Plus one"){@SongCC:31}]
+[(@SongText:"Ride"){@SongCC:35}]
+[(@SongText:"Rising sun"){@SongCC:6}]
+[(@SongText:"Rock and Roll Queen"){@SongCC:24}]
+[(@SongText:"Run"){@SongCC:11}]
+[(@SongText:"Someday"){@SongCC:20}]
+[(@SongText:"Special K"){@SongCC:23}]
+[(@SongText:"Stop to"){@SongCC:40}]
+[(@SongText:"Waterfall"){@SongCC:19}]
+[(@SongText:"Where is my mind"){@SongCC:29}]
+[(@SongText:"Will not last"){@SongCC:14}]
+[(@SongText:"World is broken"){@SongCC:21}]
+
+- Set selection
+[(@SetIndex:*){@SongIndex:1}{@SetText:#PART(@SetIndex,@Sets)#}{@Profile:Songs}]
+
+- Activation Profile
+[(@Profile:*){launch:#"SD_switch - "&@Profile&".app"#}]
+
+- Song selection
+[(@SongIndex:*)
+{@SongText:#PART(@SongIndex,@Songs)#}
+- update other stream deck profile
+{@Profile:#@SongText#}
+- manage rendering with line break
+{@SongTextML:#SUBSTITUTE(@SongText," ",CHAR(10))#}
+- compute previous and next text
+{@SongTextPrev:#PART(@SongIndex-1,@Songs)#}
+{@SongTextNext:#PART(@SongIndex+1,@Songs)#}
+- manage out of limit and rendering with line break
+{@SongPrevOOL:#IF(@SongTextPrev=@SongText,1,0)#}
+{@SongTextMLPrev:#IF(@SongPrevOOL=1," ",SUBSTITUTE(@SongTextPrev," ",CHAR(10)))#}
+{@SongNextOOL:#IF(@SongTextNext=@SongText,1,0)#}
+{@SongTextMLNext:#IF(@SongNextOOL=1," ",SUBSTITUTE(@SongTextNext," ",CHAR(10)))#}
+]
+
+- Load Song on ableton
+[(@SongLoad:*)
+{cc:1,2,#@SongCC#}{noteon:1,38,127}
+]
+
+- BUTTON : PREV
+[(@Nav:Prev){@SongIndex:#IF(@SongPrevOOL=1,@SongIndex,@SongIndex-1)#}]
+- BUTTON : NEXT
+[(@Nav:Next){@SongIndex:#IF(@SongNextOOL=1,@SongIndex,@SongIndex+1)#}]
+- BUTTON : PLAY
+[(@Nav:Run){@SongLoad:1}{@Profile:Live}]

@@ -1,0 +1,3 @@
+[(init+)(@SongTextML:*){text:#@SongTextML#}]
+[(press){@Nav:Run}{state:1}{@unset:1}]
+[(release){state:0}]
