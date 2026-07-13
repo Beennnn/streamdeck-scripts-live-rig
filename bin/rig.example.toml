@@ -1,0 +1,47 @@
+# rig.toml — copy this file to `rig.toml` (git-ignored) and edit.
+# Anything you omit falls back to the baked defaults in riglib/config.py, so a
+# minimal rig.toml only needs the few lines that differ from this template.
+
+[set]
+# The gig Ableton project. Two installs exist here — the gig one is "Suite 3".
+ableton_app = "/Applications/Ableton Live 12 Suite 3.app"
+project     = "/Users/benoitbesson/Documents/Bome MIDI Translator/Presets/Ableton Live MGO Rig 1.00.als"
+open_after_launch = true   # false = preflight only launches apps, you open the set
+
+[launch]
+# Launch order. Bome first: it owns the virtual MIDI ports the set binds to.
+apps = [
+  "/Applications/Bome MIDI Translator Pro.app",
+  "/Applications/Elgato Stream Deck.app",
+]
+settle_seconds = 2
+
+[checks]
+# label -> regex matched against the full process command line (pgrep -f).
+apps = { Ableton = "Ableton Live.*/MacOS/Live", "Stream Deck" = "Elgato Stream Deck.app/Contents/MacOS/Stream Deck", Bome = "MIDITranslatorPro" }
+# MIDI input ports that MUST exist (substring match) — rig isn't gig-ready without them.
+midi_required = ["Ableton Loopback", "Daw2Mackie", "Mackie2XR18", "XR182Mackie"]
+# Present only when the hardware is plugged — warn, never fail.
+midi_optional = ["Breath Controller", "MIDI Friend", "P-225", "Digital Piano"]
+# Expected audio interface. RME on rehearsals, "XR18" on gig days — switch as needed.
+audio_interface = "RME Fireface UCX"
+
+[monitor]
+interval    = 5          # seconds between fast checks (apps + MIDI)
+audio_every = 6          # run the slow audio check every N cycles
+alerts      = ["macos"]  # active backends: macos, push, streamdeck (add what you want)
+recovery_alerts = true   # also alert when something comes back
+
+[alerts.push]
+# ntfy.sh: pick a PRIVATE, unguessable topic and subscribe to it in the ntfy app.
+# No account, no install on this side — leave topic empty to disable push.
+server   = "https://ntfy.sh"
+topic    = ""            # e.g. "benoit-rig-9d3f2a"
+priority = "high"
+
+[alerts.streamdeck]
+# Emits a note on this virtual OUTPUT port. Configure a Stream Deck key with
+# MIDI feedback (note 60, ch 15) to light red on note-on / clear on note-off.
+port    = "Ableton Loopback"
+channel = 15             # 1-16
+note    = 60

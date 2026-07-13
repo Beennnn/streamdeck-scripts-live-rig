@@ -1,2 +1,7 @@
 .DS_Store
 *~
+
+# private rig config (ntfy topic etc.)
+bin/rig.toml
+__pycache__/
+*.pyc
