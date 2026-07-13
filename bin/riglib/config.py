@@ -35,6 +35,7 @@ DEFAULTS: dict = {
         # of app launch order. Bome still handles the translation layer on top of them.
         "apps": [
             "/Applications/Bome MIDI Translator Pro.app",
+            "/Applications/Bome Network.app",
             "/Applications/Elgato Stream Deck.app",
         ],
         "settle_seconds": 2,   # grace after an app launches before polling readiness
@@ -45,7 +46,8 @@ DEFAULTS: dict = {
         "apps": {
             "Ableton": "Ableton Live.*/MacOS/Live",
             "Stream Deck": "Elgato Stream Deck.app/Contents/MacOS/Stream Deck",
-            "Bome": "MIDITranslatorPro",
+            "Bome MIDI Translator": "MIDITranslatorPro",
+            "Bome Network": "Bome Network.app/Contents/MacOS/MT Player",
         },
         # MIDI input ports that MUST be present for the rig to route (substring match).
         "midi_required": [
@@ -57,12 +59,17 @@ DEFAULTS: dict = {
         # Present only when the hardware is plugged in — warn, don't fail.
         "midi_optional": [
             "Breath Controller",   # TEControl
-            "MIDI Friend",
             "P-225",               # Yamaha keyboard (name varies by driver)
             "Digital Piano",
         ],
         # Audio interface expected active. Currently RME Fireface UCX; XR18 on gig days.
         "audio_interface": "RME Fireface UCX",
+        # Bome Network listens on this TCP port; an ESTABLISHED connection on it means
+        # a remote (the iPhone running Bome Network) is connected. iphone_host, if set,
+        # requires the connected peer's address to contain that substring (e.g. the
+        # iPhone's fixed LAN IP); empty = any established remote counts as connected.
+        "bome_network_port": 37000,
+        "iphone_host": "",
     },
     "monitor": {
         "interval": 5,        # seconds between fast checks (apps + MIDI)

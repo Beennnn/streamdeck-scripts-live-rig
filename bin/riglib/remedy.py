@@ -84,5 +84,14 @@ def resolve_key(cfg: dict, key: str) -> Remedy | None:
                           lambda dry: _launch_app(bome, dry))
         return None
 
+    # Bome Network ↔ iPhone: can't force the phone to connect, but relaunching
+    # Bome Network makes it re-advertise and reconnect known remotes.
+    if key == "net:iphone":
+        net = _app_path_for(cfg, "Bome Network")
+        if net:
+            return Remedy("Relancer Bome Network",
+                          lambda dry: _launch_app(net, dry))
+        return None
+
     # Audio interface = hardware; nothing to relaunch.
     return None

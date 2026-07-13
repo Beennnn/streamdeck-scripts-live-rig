@@ -9,22 +9,28 @@ project     = "/Users/benoitbesson/Documents/Bome MIDI Translator/Presets/Ableto
 open_after_launch = true   # false = preflight only launches apps, you open the set
 
 [launch]
-# Launch order. Bome first: it owns the virtual MIDI ports the set binds to.
+# Launch order. Bome (Translator + Network) before the set; Stream Deck anytime.
 apps = [
   "/Applications/Bome MIDI Translator Pro.app",
+  "/Applications/Bome Network.app",
   "/Applications/Elgato Stream Deck.app",
 ]
 settle_seconds = 2
 
 [checks]
 # label -> regex matched against the full process command line (pgrep -f).
-apps = { Ableton = "Ableton Live.*/MacOS/Live", "Stream Deck" = "Elgato Stream Deck.app/Contents/MacOS/Stream Deck", Bome = "MIDITranslatorPro" }
+apps = { Ableton = "Ableton Live.*/MacOS/Live", "Stream Deck" = "Elgato Stream Deck.app/Contents/MacOS/Stream Deck", "Bome MIDI Translator" = "MIDITranslatorPro", "Bome Network" = "Bome Network.app/Contents/MacOS/MT Player" }
 # MIDI input ports that MUST exist (substring match) — rig isn't gig-ready without them.
 midi_required = ["Ableton Loopback", "Daw2Mackie", "Mackie2XR18", "XR182Mackie"]
 # Present only when the hardware is plugged — warn, never fail.
-midi_optional = ["Breath Controller", "MIDI Friend", "P-225", "Digital Piano"]
+midi_optional = ["Breath Controller", "P-225", "Digital Piano"]
 # Expected audio interface. RME on rehearsals, "XR18" on gig days — switch as needed.
 audio_interface = "RME Fireface UCX"
+# Bome Network's TCP port; an ESTABLISHED connection on it = the iPhone is connected.
+bome_network_port = 37000
+# Optional: require the connected peer to contain this substring (e.g. the iPhone's
+# fixed LAN IP "192.168.1.42"). Empty = any established remote counts as connected.
+iphone_host = ""
 
 [monitor]
 interval    = 5          # seconds between fast checks (apps + MIDI)

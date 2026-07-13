@@ -20,7 +20,8 @@ from . import checks, launch, remedy
 _audio_cache: dict = {"ts": 0.0, "res": None}
 _AUDIO_TTL = 15.0
 
-_GROUP = {"app:": "Apps", "midi?:": "MIDI optionnel", "midi:": "MIDI requis", "audio": "Audio"}
+_GROUP = {"app:": "Apps", "net:": "Réseau", "midi?:": "MIDI optionnel",
+          "midi:": "MIDI requis", "audio": "Audio"}
 
 
 def _group_of(key: str) -> str:
@@ -31,7 +32,7 @@ def _group_of(key: str) -> str:
 
 
 def build_state(cfg: dict, with_audio: bool = True) -> dict:
-    results = checks.check_apps(cfg) + checks.check_midi(cfg)
+    results = checks.check_apps(cfg) + checks.check_midi(cfg) + [checks.check_bome_iphone(cfg)]
     if with_audio:
         now = time.time()
         if _audio_cache["res"] is None or now - _audio_cache["ts"] > _AUDIO_TTL:
@@ -178,7 +179,7 @@ async function refresh(){
     :s.status==="warn"?`⚠️ Rig jouable — ${s.warns} avertissement(s).`
     :`❌ Rig PAS prêt — ${s.fails} bloquant(s), ${s.warns} avertissement(s).`;
   const groups={};for(const it of s.items){(groups[it.group]=groups[it.group]||[]).push(it);}
-  const order=["Apps","MIDI requis","Audio","MIDI optionnel","Autre"];
+  const order=["Apps","Réseau","MIDI requis","Audio","MIDI optionnel","Autre"];
   const host=document.getElementById("groups");host.innerHTML="";
   for(const g of order){if(!groups[g])continue;
     const sec=document.createElement("div");sec.className="grp";

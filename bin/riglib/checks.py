@@ -94,6 +94,35 @@ def check_midi(cfg: dict) -> list[Result]:
     return out
 
 
+def check_bome_iphone(cfg: dict) -> Result:
+    """Detect the Bome Network ↔ iPhone link via an ESTABLISHED TCP connection on
+    Bome Network's port (37000). The iPhone runs Bome Network and connects here."""
+    port = cfg["checks"].get("bome_network_port", 37000)
+    host = str(cfg["checks"].get("iphone_host", "")).strip()
+    try:
+        out = subprocess.run(
+            ["lsof", "-nP", f"-iTCP:{port}", "-sTCP:ESTABLISHED"],
+            capture_output=True, text=True, timeout=6,
+        ).stdout
+    except Exception as exc:
+        return Result("net:iphone", "Bome Network ↔ iPhone", FAIL, f"lsof: {exc}")
+
+    lines = [l for l in out.splitlines() if "ESTABLISHED" in l]
+    if host:
+        lines = [l for l in lines if host in l]
+    if not lines:
+        return Result("net:iphone", "Bome Network ↔ iPhone", FAIL,
+                      "aucune connexion (iPhone déconnecté ?)")
+    # NAME column looks like "192.168.1.10:37000->192.168.1.20:52345 (ESTABLISHED)"
+    peer = ""
+    for tok in lines[0].split():
+        if "->" in tok:
+            peer = tok.split("->", 1)[1]
+            break
+    return Result("net:iphone", "Bome Network ↔ iPhone", OK,
+                  f"connecté{f' ({peer})' if peer else ''}")
+
+
 def check_audio(cfg: dict) -> Result:
     want = cfg["checks"]["audio_interface"]
     try:
@@ -112,7 +141,7 @@ def check_audio(cfg: dict) -> Result:
 
 
 def run_all(cfg: dict, with_audio: bool = True) -> list[Result]:
-    results = check_apps(cfg) + check_midi(cfg)
+    results = check_apps(cfg) + check_midi(cfg) + [check_bome_iphone(cfg)]
     if with_audio:
         results.append(check_audio(cfg))
     return results
