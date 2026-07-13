@@ -15,8 +15,10 @@ apps = [
   "/Applications/Bome Network.app",
   "/Applications/Elgato Stream Deck.app",
   "/Applications/Stage Traxx 4.app",
+  "/Applications/Amphetamine.app",
 ]
 settle_seconds = 2
+amphetamine_session = true   # start an anti-sleep session during bring-up
 
 [checks]
 # label -> regex matched against the full process command line (pgrep -f).
@@ -31,6 +33,9 @@ midi_optional = ["Breath Controller", ["P-225", "Digital Piano"]]
 audio_interface = "RME Fireface UCX"
 # macOS default sound OUTPUT must be the Mac itself (built-in), not AirPlay/Teams/etc.
 default_output_match = "MacBook"
+# Ableton Live's OWN audio output (in Live's prefs) must be the P-225 (its USB audio).
+# Read from Live's Log.txt; adjust once the P-225 is plugged and you see its exact name.
+live_output_match = "P-225"
 # Bome Network's TCP port; an ESTABLISHED connection on it = the iPhone is connected.
 bome_network_port = 37000
 # Optional: require the connected peer to contain this substring (e.g. the iPhone's

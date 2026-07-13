@@ -12,7 +12,9 @@ monitor loop rather than run every cycle.
 
 from __future__ import annotations
 
+import glob
 import json
+import os
 import subprocess
 import time
 from dataclasses import dataclass
@@ -99,6 +101,55 @@ def check_midi(cfg: dict) -> list[Result]:
             detail=f"détecté : {found}" if found else "non branché (optionnel)",
         ))
     return out
+
+
+def check_amphetamine(cfg: dict) -> Result:
+    """Amphetamine must be running AND holding an active anti-sleep session. A live
+    session shows up as an '(Amphetamine)' power assertion in `pmset -g assertions`."""
+    if not _pgrep("Amphetamine.app/Contents/MacOS/Amphetamine"):
+        return Result("sys:amphetamine", "Amphetamine (anti-veille)", FAIL, "pas lancé")
+    try:
+        out = subprocess.run(["pmset", "-g", "assertions"],
+                             capture_output=True, text=True, timeout=5).stdout
+    except Exception as exc:
+        return Result("sys:amphetamine", "Amphetamine (anti-veille)", WARN, f"pmset: {exc}")
+    active = "(Amphetamine)" in out
+    return Result("sys:amphetamine", "Amphetamine (anti-veille)",
+                  OK if active else FAIL,
+                  "session active" if active else "lancé, aucune session active")
+
+
+def _tail(path: str, nbytes: int = 200_000) -> str:
+    size = os.path.getsize(path)
+    with open(path, "rb") as fh:
+        if size > nbytes:
+            fh.seek(size - nbytes)
+        return fh.read().decode("utf-8", "ignore")
+
+
+def check_live_output(cfg: dict) -> Result:
+    """Ableton Live's audio output device must be the P-225. Live logs its current
+    output device to Log.txt ('Audio In Out: Output Device: <name>'); read the last."""
+    want = cfg["checks"].get("live_output_match", "P-225")
+    logs = sorted(
+        glob.glob(os.path.expanduser("~/Library/Preferences/Ableton/Live*/Log.txt")),
+        key=lambda p: os.path.getmtime(p), reverse=True,
+    )
+    if not logs:
+        return Result("audio:live", f"Sortie de Live → {want}", WARN, "log Ableton introuvable")
+    dev = None
+    try:
+        for line in _tail(logs[0]).splitlines():
+            if "Audio In Out: Output Device:" in line:
+                dev = line.split("Output Device:", 1)[1].strip()
+    except Exception as exc:
+        return Result("audio:live", f"Sortie de Live → {want}", WARN, f"lecture log: {exc}")
+    if dev is None:
+        return Result("audio:live", f"Sortie de Live → {want}", WARN, "indéterminée")
+    short = dev.split(" (")[0]
+    ok = want.lower() in dev.lower()
+    return Result("audio:live", f"Sortie de Live → {want}",
+                  OK if ok else FAIL, short if ok else f"actuellement : {short}")
 
 
 def check_bome_iphone(cfg: dict) -> Result:
@@ -202,9 +253,9 @@ def check_vpn(cfg: dict) -> Result:
 
 def run_all(cfg: dict, with_audio: bool = True) -> list[Result]:
     results = check_apps(cfg) + check_midi(cfg)
-    results += [check_bome_iphone(cfg), check_vpn(cfg)]
+    results += [check_bome_iphone(cfg), check_vpn(cfg), check_amphetamine(cfg)]
     if with_audio:
-        results += [check_default_output(cfg), check_audio(cfg)]
+        results += [check_default_output(cfg), check_audio(cfg), check_live_output(cfg)]
     return results
 
 

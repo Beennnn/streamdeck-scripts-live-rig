@@ -38,8 +38,10 @@ DEFAULTS: dict = {
             "/Applications/Bome Network.app",
             "/Applications/Elgato Stream Deck.app",
             "/Applications/Stage Traxx 4.app",
+            "/Applications/Amphetamine.app",
         ],
         "settle_seconds": 2,   # grace after an app launches before polling readiness
+        "amphetamine_session": True,   # start an anti-sleep session during bring-up
     },
     "checks": {
         # label -> substring matched against the full process command line (pgrep -f).
@@ -68,6 +70,9 @@ DEFAULTS: dict = {
         "audio_interface": "RME Fireface UCX",
         # macOS default sound OUTPUT must be the Mac itself (built-in), not AirPlay/etc.
         "default_output_match": "MacBook",
+        # Ableton Live's own audio output device must be the P-225 (its USB audio).
+        # Adjust once the P-225 is plugged and you see its exact name in Live's log.
+        "live_output_match": "P-225",
         # Bome Network listens on this TCP port; an ESTABLISHED connection on it means
         # a remote (the iPhone running Bome Network) is connected. iphone_host, if set,
         # requires the connected peer's address to contain that substring (e.g. the

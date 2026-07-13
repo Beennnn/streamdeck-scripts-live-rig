@@ -138,7 +138,12 @@ PAGE = r"""<!doctype html>
   .grp{margin-top:22px} .grp h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:0 0 8px}
   .row{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:11px 14px;margin-bottom:8px}
   .row.ok{border-left-color:var(--ok)} .row.warn{border-left-color:var(--warn)} .row.fail{border-left-color:var(--fail)}
-  .ic{font-size:18px;width:22px;text-align:center}
+  .ic{font-size:20px;width:26px;text-align:center;flex:none}
+  .dot{width:12px;height:12px;border-radius:50%;flex:none}
+  .dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)} .dot.fail{background:var(--fail)} .dot.neutral{background:var(--mut)}
+  #diagram{overflow-x:auto;margin:14px 0 6px;padding:14px 10px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+  #diagram svg{width:100%;min-width:620px;height:auto;display:block}
+  .difoot{color:var(--mut);font-size:12px;text-align:center;margin-top:6px}
   .lab{flex:1;min-width:0} .lab .t{font-weight:500} .lab .d{color:var(--mut);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   #log{white-space:pre-wrap;background:#0a0c11;border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:18px;font:12px/1.5 ui-monospace,Menlo,monospace;color:var(--mut);max-height:200px;overflow:auto;display:none}
   .stamp{color:var(--mut);font-size:12px}
@@ -155,10 +160,59 @@ PAGE = r"""<!doctype html>
     <span class="stamp" id="stamp"></span>
   </div>
 </header>
-<main><div id="groups"></div><div id="log"></div></main>
+<main><div id="diagram"></div><div id="groups"></div><div id="log"></div></main>
 <script>
 const IC={ok:"✅",warn:"⚠️",fail:"❌"};
 const dry=()=>document.getElementById("dry").checked;
+function iconFor(k){
+  if(k.startsWith("app:Ableton"))return"🎵";
+  if(k.startsWith("app:Stream"))return"🎛️";
+  if(k.startsWith("app:Bome"))return"🔀";
+  if(k.startsWith("app:Stage"))return"▶️";
+  if(k.startsWith("net:"))return"📱";
+  if(k.startsWith("sys:vpn"))return"🔒";
+  if(k.startsWith("sys:output"))return"💻";
+  if(k.startsWith("sys:amphetamine"))return"☕";
+  if(k.startsWith("audio:live"))return"🎚️";
+  if(k==="audio")return"🔊";
+  if(k.startsWith("midi?:"))return"🎹";
+  if(k.startsWith("midi:"))return"🔌";
+  return"•";
+}
+// --- signal-flow diagram: nodes coloured by the checks that feed them ----------
+const stc=s=>({ok:"#2ecc71",warn:"#f4b942",fail:"#ff5468"}[s]||"#55607a");
+function nstat(keys,map){let s="neutral";for(const k of keys){const v=map[k];
+  if(v==="fail")return"fail";if(v==="warn")s="warn";else if(v==="ok"&&s==="neutral")s="ok";}return s;}
+const DNODES=[
+  {e:"📱",l:"iPhone",k:["net:iphone"],x:88,y:56},
+  {e:"🎛️",l:"Stream Deck",k:["app:Stream Deck"],x:88,y:150},
+  {e:"🎹",l:"P-225",k:["midi?:P-225"],x:88,y:244},
+  {e:"🔀",l:"Bome",k:["app:Bome MIDI Translator","app:Bome Network"],x:312,y:103},
+  {e:"▶️",l:"Stage Traxx",k:["app:Stage Traxx"],x:312,y:244},
+  {e:"🎵",l:"Ableton Live",k:["app:Ableton","midi:Ableton Loopback"],x:520,y:150},
+  {e:"🔊",l:"Sortie audio",k:["audio","audio:live"],x:684,y:150},
+];
+const DEDGES=[[0,3],[1,3],[2,5],[3,5],[4,5],[5,6]];
+function renderDiagram(items){
+  const map={};for(const it of items)map[it.key]=it.status;
+  const N=DNODES.map(n=>({...n,s:nstat(n.k,map)}));
+  let e="";
+  for(const [a,b] of DEDGES){const A=N[a],B=N[b];
+    const dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy),ux=dx/d,uy=dy/d;
+    const x1=A.x+ux*76,y1=A.y+uy*30,x2=B.x-ux*80,y2=B.y-uy*30;
+    e+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#3a4356" stroke-width="2" marker-end="url(#ar)"/>`;}
+  let g="";
+  for(const n of N){const c=stc(n.s);
+    g+=`<g><rect x="${n.x-72}" y="${n.y-25}" width="144" height="50" rx="12" fill="#12161e" stroke="${c}" stroke-width="2"/>`
+      +`<text x="${n.x-56}" y="${n.y+7}" font-size="21">${n.e}</text>`
+      +`<text x="${n.x-28}" y="${n.y+5}" fill="#e7ebf2" font-size="12.5" font-weight="600">${n.l}</text>`
+      +`<circle cx="${n.x+58}" cy="${n.y-14}" r="4.5" fill="${c}"/></g>`;}
+  document.getElementById("diagram").innerHTML=
+    `<svg viewBox="0 0 764 300" xmlns="http://www.w3.org/2000/svg">`
+    +`<defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">`
+    +`<path d="M0,0 L7,3 L0,6 Z" fill="#3a4356"/></marker></defs>${e}${g}</svg>`
+    +`<div class="difoot">Flux du rig — chaque bloc vire au vert/orange/rouge selon ses checks.</div>`;
+}
 function logline(t){const l=document.getElementById("log");l.style.display="block";l.textContent=(new Date().toLocaleTimeString()+"  "+t+"\n"+l.textContent).slice(0,4000);}
 async function refresh(){
   const y=window.scrollY;
@@ -167,6 +221,7 @@ async function refresh(){
   b.textContent=s.status==="ok"?"✅ Rig prêt — tout est vert."
     :s.status==="warn"?`⚠️ Rig jouable — ${s.warns} avertissement(s).`
     :`❌ Rig PAS prêt — ${s.fails} bloquant(s), ${s.warns} avertissement(s).`;
+  renderDiagram(s.items);
   const groups={};for(const it of s.items){(groups[it.group]=groups[it.group]||[]).push(it);}
   const order=["Apps","Réseau","MIDI requis","Système","Audio","MIDI optionnel","Autre"];
   const host=document.getElementById("groups");host.innerHTML="";
@@ -175,8 +230,9 @@ async function refresh(){
     sec.innerHTML=`<h2>${g}</h2>`;
     for(const it of groups[g]){
       const row=document.createElement("div");row.className="row "+it.status;
-      row.innerHTML=`<div class="ic">${IC[it.status]}</div>
-        <div class="lab"><div class="t">${it.label}</div>${it.detail?`<div class="d">${it.detail}</div>`:""}</div>`;
+      row.innerHTML=`<div class="ic">${iconFor(it.key)}</div>
+        <div class="lab"><div class="t">${it.label}</div>${it.detail?`<div class="d">${it.detail}</div>`:""}</div>
+        <div class="dot ${it.status}" title="${it.status}"></div>`;
       if(it.remedy){const btn=document.createElement("button");btn.className="fix";btn.textContent=it.remedy;
         btn.onclick=()=>fix(it.key,it.remedy);row.appendChild(btn);}
       sec.appendChild(row);

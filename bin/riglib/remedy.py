@@ -93,5 +93,23 @@ def resolve_key(cfg: dict, key: str) -> Remedy | None:
                           lambda dry: _launch_app(net, dry))
         return None
 
-    # Audio interface = hardware; nothing to relaunch.
+    # Amphetamine: launch it if needed, then start an anti-sleep session.
+    if key == "sys:amphetamine":
+        return Remedy("Démarrer session Amphetamine", _amphetamine_session)
+
+    # Audio interface = hardware, and Live's output device is set inside Ableton —
+    # nothing to relaunch here.
     return None
+
+
+def _amphetamine_session(dry: bool) -> tuple[bool, str]:
+    if dry:
+        return True, "[dry-run] démarrerait une session Amphetamine"
+    subprocess.run(["open", "-a", "/Applications/Amphetamine.app"], capture_output=True)
+    r = subprocess.run(
+        ["osascript", "-e", 'tell application "Amphetamine" to start new session'],
+        capture_output=True, text=True,
+    )
+    if r.returncode == 0:
+        return True, "session Amphetamine démarrée"
+    return False, r.stderr.strip() or "échec (autorisation Automation ?)"

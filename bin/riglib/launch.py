@@ -98,7 +98,25 @@ def open_set(cfg: dict, log=print, dry_run: bool = False) -> None:
         log("  ⚠️  Ableton pas encore prêt après 45s (gros set / plugins qui chargent)")
 
 
+def ensure_amphetamine_session(cfg: dict, log=print, dry_run: bool = False) -> None:
+    if not cfg["launch"].get("amphetamine_session", True):
+        return
+    if dry_run:
+        log("  [dry-run] démarrerait une session Amphetamine (anti-veille)")
+        return
+    # Amphetamine exposes an AppleScript command; a bare session runs indefinitely.
+    r = subprocess.run(
+        ["osascript", "-e", 'tell application "Amphetamine" to start new session'],
+        capture_output=True, text=True,
+    )
+    if r.returncode == 0:
+        log("  ☕ session Amphetamine démarrée")
+    else:
+        log(f"  ⚠️  Amphetamine : {r.stderr.strip() or 'session non démarrée (autorisation ?)'}")
+
+
 def bring_up(cfg: dict, log=print, dry_run: bool = False) -> None:
     log("Lancement des apps du rig…" if not dry_run else "Séquence de mise en place (dry-run) :")
     launch_apps(cfg, log=log, dry_run=dry_run)
+    ensure_amphetamine_session(cfg, log=log, dry_run=dry_run)
     open_set(cfg, log=log, dry_run=dry_run)
