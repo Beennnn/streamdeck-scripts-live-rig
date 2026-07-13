@@ -21,12 +21,17 @@ import mido
 
 
 class Alerter:
-    def __init__(self, cfg: dict, active: list[str], log=print):
+    def __init__(self, cfg: dict, active: list[str], log=print, dry_run: bool = False):
         self.cfg = cfg
         self.active = active
         self.log = log
+        self.dry_run = dry_run
 
     def notify(self, title: str, message: str, level: str = "fail") -> None:
+        if self.dry_run:
+            self.log(f"  [dry-run] alerte {level} → {', '.join(self.active)} : "
+                     f"« {title} — {message} » (rien envoyé)")
+            return
         for backend in self.active:
             fn = getattr(self, f"_{backend}", None)
             if fn is None:

@@ -39,14 +39,21 @@ def _midi_port_present(substr: str) -> bool:
         return False
 
 
-def launch_apps(cfg: dict, log=print) -> None:
+def launch_apps(cfg: dict, log=print, dry_run: bool = False) -> None:
     settle = cfg["launch"].get("settle_seconds", 2)
     for app in cfg["launch"]["apps"]:
         name = Path(app).stem
+        if dry_run:
+            exists = "" if Path(app).exists() else "  (introuvable !)"
+            log(f"  [dry-run] lancerait {name}{exists}")
+            continue
         ok, msg = _open_app(app)
         log(f"  {'▶' if ok else '✖'} {name} — {msg}")
         if ok:
             time.sleep(settle)
+
+    if dry_run:
+        return
 
     # Bome owns the virtual ports; wait for at least one required port to exist.
     required = cfg["checks"]["midi_required"]
@@ -59,11 +66,18 @@ def launch_apps(cfg: dict, log=print) -> None:
             log(f"  ⚠️  « {anchor} » toujours absent après 15s (Bome pas prêt ?)")
 
 
-def open_set(cfg: dict, log=print) -> None:
+def open_set(cfg: dict, log=print, dry_run: bool = False) -> None:
     if not cfg["set"].get("open_after_launch", True):
+        log("  (ouverture du set désactivée : [set].open_after_launch = false)")
         return
     project = cfg["set"]["project"]
     app = cfg["set"]["ableton_app"]
+    if dry_run:
+        pe = "" if Path(project).exists() else "  (set introuvable !)"
+        ae = "" if Path(app).exists() else "  (Ableton introuvable !)"
+        log(f"  [dry-run] ouvrirait « {Path(project).name} »{pe}")
+        log(f"  [dry-run]   dans {Path(app).stem}{ae}")
+        return
     if not Path(project).exists():
         log(f"  ✖ set introuvable : {project}")
         log(f"    → corrige [set].project dans rig.toml")
@@ -83,7 +97,7 @@ def open_set(cfg: dict, log=print) -> None:
         log("  ⚠️  Ableton pas encore prêt après 45s (gros set / plugins qui chargent)")
 
 
-def bring_up(cfg: dict, log=print) -> None:
-    log("Lancement des apps du rig…")
-    launch_apps(cfg, log=log)
-    open_set(cfg, log=log)
+def bring_up(cfg: dict, log=print, dry_run: bool = False) -> None:
+    log("Lancement des apps du rig…" if not dry_run else "Séquence de mise en place (dry-run) :")
+    launch_apps(cfg, log=log, dry_run=dry_run)
+    open_set(cfg, log=log, dry_run=dry_run)

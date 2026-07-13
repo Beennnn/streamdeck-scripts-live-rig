@@ -1,0 +1,34 @@
+# rig.test.toml — INERT profile for testing without touching your live session.
+# Use with:  RIG_CONF=bin/rig.test.toml bin/rig <cmd>
+#
+# It launches nothing, opens no set, and routes the Stream Deck MIDI alert to a
+# dead-end IAC bus instead of "Ableton Loopback", so even a *real* (non-dry-run)
+# test can't inject MIDI into the set Ableton is running.
+
+[set]
+open_after_launch = false          # never open a project
+
+[launch]
+apps = []                          # launch no apps
+settle_seconds = 0
+
+[checks]
+# Same read-only checks as the real profile (pgrep / MIDI / audio are harmless).
+# Inherits midi_required / midi_optional / audio_interface from baked defaults.
+
+[monitor]
+interval    = 5
+audio_every = 6
+alerts      = ["macos"]            # override per-run with --alerts, or --dry-run
+recovery_alerts = true
+
+[alerts.push]
+topic = ""                         # push disabled
+
+[alerts.streamdeck]
+# Requires macOS IAC Driver enabled (Audio MIDI Setup → MIDI Studio → IAC Driver
+# → "Device is online"). Until then this port is absent and the backend no-ops
+# with a warning instead of hitting the live routing.
+port    = "IAC"                    # matches "IAC Bus 1"; NOT "Ableton Loopback"
+channel = 15
+note    = 60

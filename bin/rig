@@ -51,9 +51,11 @@ def cmd_check(cfg: dict, _args) -> int:
     return code
 
 
-def cmd_preflight(cfg: dict, _args) -> int:
-    print(f"[{_hr()}] Mise en place du rig — lancement + vérification\n")
-    launch.bring_up(cfg, log=print)
+def cmd_preflight(cfg: dict, args) -> int:
+    dry = getattr(args, "dry_run", False)
+    tag = " (DRY-RUN — rien n'est lancé)" if dry else ""
+    print(f"[{_hr()}] Mise en place du rig — lancement + vérification{tag}\n")
+    launch.bring_up(cfg, log=print, dry_run=dry)
     print(f"\n[{_hr()}] Vérification finale…\n")
     results = checks.run_all(cfg, with_audio=True)
     _print_results(results)
@@ -61,7 +63,7 @@ def cmd_preflight(cfg: dict, _args) -> int:
     print(f"\n{line}")
     if code == 2:
         active = cfg["monitor"]["alerts"]
-        alerts.Alerter(cfg, active).notify(
+        alerts.Alerter(cfg, active, dry_run=dry).notify(
             "Rig — préflight", "Un check bloquant a échoué au démarrage.", "fail")
     return code
 
@@ -71,7 +73,8 @@ def cmd_monitor(cfg: dict, args) -> int:
     interval = args.interval or cfg["monitor"]["interval"]
     audio_every = cfg["monitor"]["audio_every"]
     recovery = cfg["monitor"].get("recovery_alerts", True)
-    alerter = alerts.Alerter(cfg, active)
+    dry = getattr(args, "dry_run", False)
+    alerter = alerts.Alerter(cfg, active, dry_run=dry)
 
     print(f"[{_hr()}] Monitoring live — alertes: {', '.join(active)} — "
           f"toutes les {interval}s (Ctrl-C pour arrêter)\n")
@@ -122,8 +125,9 @@ def cmd_monitor(cfg: dict, args) -> int:
 
 def cmd_alert_test(cfg: dict, args) -> int:
     active = args.alerts.split(",") if args.alerts else cfg["monitor"]["alerts"]
-    print(f"[{_hr()}] Test des alertes: {', '.join(active)}")
-    alerts.Alerter(cfg, active).notify(
+    dry = getattr(args, "dry_run", False)
+    print(f"[{_hr()}] Test des alertes: {', '.join(active)}{' (dry-run)' if dry else ''}")
+    alerts.Alerter(cfg, active, dry_run=dry).notify(
         "🎹 Rig — test", "Ceci est une alerte de test.", "warn")
     print("Envoyé. Vérifie la notif / le téléphone / le bouton Stream Deck.")
     return 0
@@ -140,15 +144,20 @@ def main(argv=None) -> int:
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    sub.add_parser("preflight", help="lance les apps + ouvre le set + vérifie")
+    pf = sub.add_parser("preflight", help="lance les apps + ouvre le set + vérifie")
+    pf.add_argument("--dry-run", action="store_true",
+                    help="montre ce qui serait lancé/ouvert sans rien exécuter")
     sub.add_parser("check", help="vérifie seulement (pas de lancement)")
 
     m = sub.add_parser("monitor", help="surveille en continu + alerte")
     m.add_argument("--alerts", help="backends (csv): macos,push,streamdeck")
     m.add_argument("--interval", type=int, help="secondes entre deux checks")
+    m.add_argument("--dry-run", action="store_true",
+                   help="surveille mais n'envoie aucune alerte (les affiche)")
 
     t = sub.add_parser("alert-test", help="envoie une alerte de test")
     t.add_argument("--alerts", help="backends (csv) à tester")
+    t.add_argument("--dry-run", action="store_true", help="n'envoie rien, affiche")
 
     args = p.parse_args(argv)
     return {
