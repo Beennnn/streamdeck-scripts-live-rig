@@ -17,7 +17,7 @@ import sys
 import time
 from datetime import datetime
 
-from riglib import alerts, checks, config, launch
+from riglib import alerts, checks, config, launch, server
 
 
 def _hr() -> str:
@@ -123,6 +123,11 @@ def cmd_monitor(cfg: dict, args) -> int:
         return 0
 
 
+def cmd_serve(cfg: dict, args) -> int:
+    server.serve(cfg, port=args.port, open_browser=not args.no_open)
+    return 0
+
+
 def cmd_alert_test(cfg: dict, args) -> int:
     active = args.alerts.split(",") if args.alerts else cfg["monitor"]["alerts"]
     dry = getattr(args, "dry_run", False)
@@ -159,12 +164,17 @@ def main(argv=None) -> int:
     t.add_argument("--alerts", help="backends (csv) à tester")
     t.add_argument("--dry-run", action="store_true", help="n'envoie rien, affiche")
 
+    s = sub.add_parser("serve", help="dashboard web d'état + fix/relaunch")
+    s.add_argument("--port", type=int, default=8765, help="port local (défaut 8765)")
+    s.add_argument("--no-open", action="store_true", help="ne pas ouvrir le navigateur")
+
     args = p.parse_args(argv)
     return {
         "preflight": cmd_preflight,
         "check": cmd_check,
         "monitor": cmd_monitor,
         "alert-test": cmd_alert_test,
+        "serve": cmd_serve,
     }[args.cmd](cfg, args)
 
 

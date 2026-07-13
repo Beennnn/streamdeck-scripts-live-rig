@@ -36,6 +36,10 @@ class Result:
     def ok(self) -> bool:
         return self.status == OK
 
+    def to_dict(self) -> dict:
+        return {"key": self.key, "label": self.label,
+                "status": self.status, "detail": self.detail}
+
 
 def _pgrep(pattern: str) -> bool:
     # -f matches the full command line; pattern is an extended regex.

@@ -9,8 +9,21 @@ cp bin/rig.example.toml bin/rig.toml   # then edit — set your gig .als, alerts
 bin/rig preflight     # launch Bome → Stream Deck → open the gig set, then verify
 bin/rig check         # verify only (no launch) — a fast go/no-go checklist
 bin/rig monitor       # watch continuously; alert the moment something dies
+bin/rig serve         # web dashboard: global state + per-item fix/relaunch button
 bin/rig alert-test    # fire a test alert through every active backend
 ```
+
+## Dashboard (`rig serve`)
+
+`bin/rig serve` opens a local page (127.0.0.1 only) with the whole rig at a glance:
+a red/amber/green banner, then every check grouped **Apps / MIDI requis / Audio /
+MIDI optionnel** with its status and detail. The state auto-refreshes (read-only).
+
+Each **broken and fixable** row gets an action button — app down → *Relancer …*,
+Ableton missing → *Ouvrir le set*, a required MIDI port gone → *Rouvrir le set* /
+*Relancer Bome*. Hardware faults (audio interface unplugged) show the detail with no
+button. Up top: **Préflight complet** (full bring-up) and a **mode simulation
+(dry-run)** toggle that makes every action inert end to end. Flags: `--port`, `--no-open`.
 
 ## What it checks
 
