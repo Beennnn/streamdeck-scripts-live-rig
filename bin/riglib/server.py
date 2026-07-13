@@ -9,18 +9,12 @@ from __future__ import annotations
 
 import json
 import threading
-import time
 import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 from . import checks, launch, remedy
 
-# The audio check shells out to system_profiler (~1s); cache it so a page polling
-# every few seconds doesn't hammer it. Apps + MIDI stay live (they're cheap).
-_audio_cache: dict = {"ts": 0.0, "res": None}
-_AUDIO_TTL = 15.0
-
-_GROUP = {"app:": "Apps", "net:": "Réseau", "midi?:": "MIDI optionnel",
+_GROUP = {"app:": "Apps", "net:": "Réseau", "sys:": "Système", "midi?:": "MIDI optionnel",
           "midi:": "MIDI requis", "audio": "Audio"}
 
 
@@ -32,13 +26,8 @@ def _group_of(key: str) -> str:
 
 
 def build_state(cfg: dict, with_audio: bool = True) -> dict:
-    results = checks.check_apps(cfg) + checks.check_midi(cfg) + [checks.check_bome_iphone(cfg)]
-    if with_audio:
-        now = time.time()
-        if _audio_cache["res"] is None or now - _audio_cache["ts"] > _AUDIO_TTL:
-            _audio_cache["res"] = checks.check_audio(cfg)
-            _audio_cache["ts"] = now
-        results.append(_audio_cache["res"])
+    # checks.run_all caches the slow system_profiler call internally, so polling is cheap.
+    results = checks.run_all(cfg, with_audio=with_audio)
     items = []
     for r in results:
         rem = remedy.resolve(cfg, r)
@@ -179,7 +168,7 @@ async function refresh(){
     :s.status==="warn"?`⚠️ Rig jouable — ${s.warns} avertissement(s).`
     :`❌ Rig PAS prêt — ${s.fails} bloquant(s), ${s.warns} avertissement(s).`;
   const groups={};for(const it of s.items){(groups[it.group]=groups[it.group]||[]).push(it);}
-  const order=["Apps","Réseau","MIDI requis","Audio","MIDI optionnel","Autre"];
+  const order=["Apps","Réseau","MIDI requis","Système","Audio","MIDI optionnel","Autre"];
   const host=document.getElementById("groups");host.innerHTML="";
   for(const g of order){if(!groups[g])continue;
     const sec=document.createElement("div");sec.className="grp";

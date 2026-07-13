@@ -37,6 +37,7 @@ DEFAULTS: dict = {
             "/Applications/Bome MIDI Translator Pro.app",
             "/Applications/Bome Network.app",
             "/Applications/Elgato Stream Deck.app",
+            "/Applications/Stage Traxx 4.app",
         ],
         "settle_seconds": 2,   # grace after an app launches before polling readiness
     },
@@ -48,22 +49,25 @@ DEFAULTS: dict = {
             "Stream Deck": "Elgato Stream Deck.app/Contents/MacOS/Stream Deck",
             "Bome MIDI Translator": "MIDITranslatorPro",
             "Bome Network": "Bome Network.app/Contents/MacOS/MT Player",
+            "Stage Traxx": "Stage Traxx",
         },
         # MIDI input ports that MUST be present for the rig to route (substring match).
+        # Only Ableton Loopback is load-bearing; the Mackie/XR18 routing ports aren't
+        # essential (they matter only when the XR18 mixer is in the chain).
         "midi_required": [
             "Ableton Loopback",
-            "Daw2Mackie",
-            "Mackie2XR18",
-            "XR182Mackie",
         ],
-        # Present only when the hardware is plugged in — warn, don't fail.
+        # Optional — warn if absent. An entry that is a LIST is an alternatives group:
+        # satisfied if ANY of them is present. P-225 and Digital Piano are the same
+        # keyboard under two driver names; only one is ever connected at a time.
         "midi_optional": [
-            "Breath Controller",   # TEControl
-            "P-225",               # Yamaha keyboard (name varies by driver)
-            "Digital Piano",
+            "Breath Controller",         # TEControl
+            ["P-225", "Digital Piano"],  # keyboard — either name is fine
         ],
         # Audio interface expected active. Currently RME Fireface UCX; XR18 on gig days.
         "audio_interface": "RME Fireface UCX",
+        # macOS default sound OUTPUT must be the Mac itself (built-in), not AirPlay/etc.
+        "default_output_match": "MacBook",
         # Bome Network listens on this TCP port; an ESTABLISHED connection on it means
         # a remote (the iPhone running Bome Network) is connected. iphone_host, if set,
         # requires the connected peer's address to contain that substring (e.g. the

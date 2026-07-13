@@ -9,23 +9,28 @@ project     = "/Users/benoitbesson/Documents/Bome MIDI Translator/Presets/Ableto
 open_after_launch = true   # false = preflight only launches apps, you open the set
 
 [launch]
-# Launch order. Bome (Translator + Network) before the set; Stream Deck anytime.
+# Launch order. Bome (Translator + Network) before the set; Stream Deck + Stage Traxx anytime.
 apps = [
   "/Applications/Bome MIDI Translator Pro.app",
   "/Applications/Bome Network.app",
   "/Applications/Elgato Stream Deck.app",
+  "/Applications/Stage Traxx 4.app",
 ]
 settle_seconds = 2
 
 [checks]
 # label -> regex matched against the full process command line (pgrep -f).
-apps = { Ableton = "Ableton Live.*/MacOS/Live", "Stream Deck" = "Elgato Stream Deck.app/Contents/MacOS/Stream Deck", "Bome MIDI Translator" = "MIDITranslatorPro", "Bome Network" = "Bome Network.app/Contents/MacOS/MT Player" }
-# MIDI input ports that MUST exist (substring match) — rig isn't gig-ready without them.
-midi_required = ["Ableton Loopback", "Daw2Mackie", "Mackie2XR18", "XR182Mackie"]
-# Present only when the hardware is plugged — warn, never fail.
-midi_optional = ["Breath Controller", "P-225", "Digital Piano"]
+apps = { Ableton = "Ableton Live.*/MacOS/Live", "Stream Deck" = "Elgato Stream Deck.app/Contents/MacOS/Stream Deck", "Bome MIDI Translator" = "MIDITranslatorPro", "Bome Network" = "Bome Network.app/Contents/MacOS/MT Player", "Stage Traxx" = "Stage Traxx" }
+# MIDI input ports that MUST exist. Only Ableton Loopback is load-bearing; the
+# Mackie/XR18 routing ports aren't essential and are intentionally not listed.
+midi_required = ["Ableton Loopback"]
+# Optional (warn if absent). A LIST entry is an alternatives group — OK if ANY is
+# present. P-225 / Digital Piano = same keyboard, two driver names, one at a time.
+midi_optional = ["Breath Controller", ["P-225", "Digital Piano"]]
 # Expected audio interface. RME on rehearsals, "XR18" on gig days — switch as needed.
 audio_interface = "RME Fireface UCX"
+# macOS default sound OUTPUT must be the Mac itself (built-in), not AirPlay/Teams/etc.
+default_output_match = "MacBook"
 # Bome Network's TCP port; an ESTABLISHED connection on it = the iPhone is connected.
 bome_network_port = 37000
 # Optional: require the connected peer to contain this substring (e.g. the iPhone's

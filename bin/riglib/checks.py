@@ -12,7 +12,9 @@ monitor loop rather than run every cycle.
 
 from __future__ import annotations
 
+import json
 import subprocess
+import time
 from dataclasses import dataclass
 
 import mido
@@ -84,12 +86,17 @@ def check_midi(cfg: dict) -> list[Result]:
             status=OK if hit else FAIL,
             detail="" if hit else "absent",
         ))
-    for name in cfg["checks"]["midi_optional"]:
-        hit = present(name)
+    # An optional entry may be a single port name OR a list of alternatives
+    # (e.g. P-225 / Digital Piano — the same keyboard under two driver names).
+    # The group is satisfied if ANY alternative is present.
+    for entry in cfg["checks"]["midi_optional"]:
+        alts = entry if isinstance(entry, list) else [entry]
+        label = " / ".join(alts)
+        found = next((a for a in alts if present(a)), None)
         out.append(Result(
-            key=f"midi?:{name}", label=f"Port MIDI « {name} »",
-            status=OK if hit else WARN,
-            detail="" if hit else "non branché (optionnel)",
+            key=f"midi?:{alts[0]}", label=f"Clavier « {label} »" if len(alts) > 1 else f"Port MIDI « {label} »",
+            status=OK if found else WARN,
+            detail=f"détecté : {found}" if found else "non branché (optionnel)",
         ))
     return out
 
@@ -123,16 +130,32 @@ def check_bome_iphone(cfg: dict) -> Result:
                   f"connecté{f' ({peer})' if peer else ''}")
 
 
+# system_profiler is slow (~1s); cache its JSON so audio + default-output checks
+# (and a polling dashboard) share one call instead of shelling out repeatedly.
+_profile_cache: dict = {"ts": 0.0, "data": None}
+_PROFILE_TTL = 10.0
+
+
+def _audio_items() -> list[dict]:
+    now = time.time()
+    if _profile_cache["data"] is None or now - _profile_cache["ts"] > _PROFILE_TTL:
+        try:
+            out = subprocess.run(
+                ["system_profiler", "SPAudioDataType", "-json"],
+                capture_output=True, text=True, timeout=15,
+            ).stdout
+            _profile_cache["data"] = json.loads(out)
+        except Exception:
+            _profile_cache["data"] = {}
+        _profile_cache["ts"] = now
+    data = _profile_cache["data"] or {}
+    return [it for top in data.get("SPAudioDataType", []) for it in top.get("_items", [])]
+
+
 def check_audio(cfg: dict) -> Result:
     want = cfg["checks"]["audio_interface"]
-    try:
-        blob = subprocess.run(
-            ["system_profiler", "SPAudioDataType"],
-            capture_output=True, text=True, timeout=15,
-        ).stdout
-    except Exception as exc:
-        return Result("audio", f"Interface « {want} »", FAIL, f"system_profiler: {exc}")
-    hit = want.lower() in blob.lower()
+    names = [it.get("_name", "") for it in _audio_items()]
+    hit = any(want.lower() in n.lower() for n in names)
     return Result(
         key="audio", label=f"Interface audio « {want} »",
         status=OK if hit else FAIL,
@@ -140,10 +163,48 @@ def check_audio(cfg: dict) -> Result:
     )
 
 
+def check_default_output(cfg: dict) -> Result:
+    """The macOS default sound output must be the Mac itself (built-in), not an
+    external / AirPlay / conferencing device."""
+    want = cfg["checks"].get("default_output_match", "MacBook")
+    name = None
+    for it in _audio_items():
+        if it.get("coreaudio_default_audio_output_device") == "spaudio_yes":
+            name = it.get("_name", "")
+            break
+    if name is None:
+        return Result("sys:output", "Sortie son par défaut (Mac)", WARN, "indéterminée")
+    ok = want.lower() in name.lower()
+    return Result(
+        key="sys:output", label="Sortie son par défaut (Mac)",
+        status=OK if ok else FAIL,
+        detail=f"actuellement : {name}" if not ok else name,
+    )
+
+
+# PPP:Modem entries here are serial gadgets (ToneX pedal, Seeed boards), not VPNs —
+# a VPN is a *connected* service that isn't one of those serial modems.
+def check_vpn(cfg: dict) -> Result:
+    try:
+        out = subprocess.run(["scutil", "--nc", "list"],
+                             capture_output=True, text=True, timeout=5).stdout
+    except Exception as exc:
+        return Result("sys:vpn", "VPN inactif", WARN, f"scutil: {exc}")
+    active = [l for l in out.splitlines()
+              if "(Connected)" in l and "[PPP:Modem]" not in l]
+    if not active:
+        return Result("sys:vpn", "VPN inactif", OK, "")
+    name = ""
+    if '"' in active[0]:
+        name = active[0].split('"')[1]
+    return Result("sys:vpn", "VPN inactif", FAIL, f"VPN actif : {name}".rstrip(" :"))
+
+
 def run_all(cfg: dict, with_audio: bool = True) -> list[Result]:
-    results = check_apps(cfg) + check_midi(cfg) + [check_bome_iphone(cfg)]
+    results = check_apps(cfg) + check_midi(cfg)
+    results += [check_bome_iphone(cfg), check_vpn(cfg)]
     if with_audio:
-        results.append(check_audio(cfg))
+        results += [check_default_output(cfg), check_audio(cfg)]
     return results
 
 
