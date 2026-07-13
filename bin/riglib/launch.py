@@ -55,7 +55,8 @@ def launch_apps(cfg: dict, log=print, dry_run: bool = False) -> None:
     if dry_run:
         return
 
-    # Bome owns the virtual ports; wait for at least one required port to exist.
+    # The virtual ports come from the macOS IAC Driver (already online), so they
+    # normally exist immediately; this wait just guards the rare cold-boot race.
     required = cfg["checks"]["midi_required"]
     if required:
         anchor = required[0]

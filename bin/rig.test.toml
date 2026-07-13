@@ -26,9 +26,12 @@ recovery_alerts = true
 topic = ""                         # push disabled
 
 [alerts.streamdeck]
-# Requires macOS IAC Driver enabled (Audio MIDI Setup → MIDI Studio → IAC Driver
-# → "Device is online"). Until then this port is absent and the backend no-ops
-# with a warning instead of hitting the live routing.
-port    = "IAC"                    # matches "IAC Bus 1"; NOT "Ableton Loopback"
+# The macOS IAC Driver is already enabled, but every existing IAC port is wired
+# into the live rig — there is no dead-end yet. This deliberately points at a
+# non-existent port so a real test SAFELY no-ops (backend warns, sends nothing)
+# instead of injecting MIDI into the live routing. To do a genuine Stream Deck
+# feedback test later, add one dedicated IAC port (Audio MIDI Setup → IAC Driver
+# → "+") named "rig-test", set it here, and map a SD key to listen on it.
+port    = "rig-test-deadend"       # does not exist on purpose → inert
 channel = 15
 note    = 60

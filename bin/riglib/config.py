@@ -29,8 +29,10 @@ DEFAULTS: dict = {
         "open_after_launch": True,
     },
     "launch": {
-        # Order matters: Bome creates the virtual MIDI ports Ableton binds to,
-        # so it must be up before the set opens. Stream Deck can come up anytime.
+        # Order: Bome (MIDI translation/fan-out) up before the set; Stream Deck anytime.
+        # NB: the virtual ports (Ableton Loopback, Daw2Mackie, …) are provided by the
+        # macOS IAC Driver, which is already enabled — so they exist at boot regardless
+        # of app launch order. Bome still handles the translation layer on top of them.
         "apps": [
             "/Applications/Bome MIDI Translator Pro.app",
             "/Applications/Elgato Stream Deck.app",
