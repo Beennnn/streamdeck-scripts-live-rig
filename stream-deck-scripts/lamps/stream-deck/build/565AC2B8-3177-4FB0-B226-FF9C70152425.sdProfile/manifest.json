@@ -1,0 +1,15 @@
+{
+ "Device": {
+  "Model": "20GAT9901",
+  "UUID": "@(1)[4057/108/CL13L2A01061]"
+ },
+ "Name": "Lampes scene",
+ "Pages": {
+  "Current": "72364c51-8f5f-43ba-8519-b27b4c8c249b",
+  "Default": "72364c51-8f5f-43ba-8519-b27b4c8c249b",
+  "Pages": [
+   "72364c51-8f5f-43ba-8519-b27b4c8c249b"
+  ]
+ },
+ "Version": "3.0"
+}

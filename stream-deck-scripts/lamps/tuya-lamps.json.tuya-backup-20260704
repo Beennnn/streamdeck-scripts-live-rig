@@ -1,0 +1,99 @@
+{
+  "_note": "Lampes Tuya. 'ips' = une IP par sous-reseau : 192.168.1 = maison (box), 192.168.8 = scene (GL.iNet Mango, IPs RESERVEES dans son DHCP). Mise a jour automatique par MAC si une lampe change d'adresse.",
+  "lamps": [
+    {
+      "name": "L2",
+      "mac": "d8:c8:0c:af:ba:66",
+      "device_id": "bf70993bd4b0525eaczg4k",
+      "ips": {
+        "192.168.1": "192.168.1.71",
+        "192.168.8": "192.168.8.221"
+      },
+      "local_key": "T^yeBAXH}X'6nP5i",
+      "last": "192.168.8"
+    },
+    {
+      "name": "L1",
+      "mac": "d8:c8:0c:af:ae:b0",
+      "device_id": "bf0553cce7e28685bdrunt",
+      "ips": {
+        "192.168.1": "192.168.1.27",
+        "192.168.8": "192.168.8.157"
+      },
+      "local_key": "4QjweTn&3mQeJ0{h",
+      "last": "192.168.8"
+    }
+  ],
+  "state": {
+    "color": "violet",
+    "last_subnet": "192.168.1"
+  },
+  "groups": {
+    "front": [
+      "L1"
+    ],
+    "back": [
+      "L2"
+    ]
+  },
+  "snapshots": {
+    "test": {
+      "L1": {
+        "on": true,
+        "bri": 60,
+        "rgb": [
+          0,
+          100,
+          200
+        ]
+      },
+      "L2": {
+        "on": true,
+        "bri": 24,
+        "rgb": [
+          0,
+          100,
+          200
+        ]
+      }
+    },
+    "rougeplein": {
+      "L2": {
+        "on": true,
+        "bri": 100,
+        "rgb": [
+          230,
+          0,
+          40
+        ]
+      },
+      "L1": {
+        "on": true,
+        "bri": 100,
+        "rgb": [
+          230,
+          0,
+          40
+        ]
+      }
+    }
+  },
+  "router": {
+    "host": "192.168.8.1",
+    "ssh_key": "~/.ssh/id_ed25519_mango"
+  },
+  "sync": {
+    "enabled": true,
+    "state": {
+      "on": true,
+      "col": [
+        0,
+        100,
+        200
+      ],
+      "bri": 153
+    }
+  },
+  "debug": true,
+  "connection": "persistent"
+}

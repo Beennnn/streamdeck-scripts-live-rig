@@ -1,0 +1,224 @@
+{
+  "_note": "Migration WLED 2026-07-11 : L1/L2 = ampoules Athom RGBCW sous firmware WLED, pilotees en HTTP local (http://<host>/json/state). host = IP reservee dans le DHCP du Mango (sous-reseau 192.168.8). Le code Tuya reste dispo (type omis = tuya) mais les lampes du rig sont desormais WLED. Voir sd-plugin/store/WLED-SETUP.md.",
+  "lamps": [
+    {
+      "name": "L1",
+      "type": "wled",
+      "host": "192.168.1.86",
+      "mac": "10:00:3B:DB:66:00",
+      "transition": 4
+    },
+    {
+      "name": "L2",
+      "type": "wled",
+      "host": "192.168.1.45",
+      "mac": "10:00:3B:DB:6E:D4",
+      "transition": 4
+    }
+  ],
+  "state": {
+    "color": "rouge",
+    "last_subnet": "192.168.8"
+  },
+  "groups": {
+    "front": [
+      "L1"
+    ],
+    "back": [
+      "L2"
+    ]
+  },
+  "snapshots": {
+    "test": {
+      "L1": {
+        "on": true,
+        "bri": 60,
+        "rgb": [
+          0,
+          100,
+          200
+        ]
+      },
+      "L2": {
+        "on": true,
+        "bri": 24,
+        "rgb": [
+          0,
+          100,
+          200
+        ]
+      }
+    },
+    "rougeplein": {
+      "L2": {
+        "on": true,
+        "bri": 100,
+        "rgb": [
+          230,
+          0,
+          40
+        ]
+      },
+      "L1": {
+        "on": true,
+        "bri": 100,
+        "rgb": [
+          230,
+          0,
+          40
+        ]
+      }
+    },
+    "__dbg": {
+      "L2": {
+        "on": true,
+        "bri": 80,
+        "rgb": [
+          0,
+          100,
+          200
+        ]
+      },
+      "L1": {
+        "on": true,
+        "bri": 80,
+        "rgb": [
+          0,
+          80,
+          255
+        ]
+      }
+    },
+    "__wtest": {
+      "L2": {
+        "on": true,
+        "bri": 70,
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "col": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "cct": 0,
+        "fx": 0,
+        "pal": 5
+      },
+      "L1": {
+        "on": true,
+        "bri": 70,
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "col": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "cct": 0,
+        "fx": 0,
+        "pal": 5
+      }
+    },
+    "__selftest": {
+      "L1": {
+        "on": true,
+        "bri": 80,
+        "rgb": [
+          255,
+          130,
+          170
+        ],
+        "col": [
+          255,
+          130,
+          170,
+          0
+        ],
+        "cct": 255,
+        "fx": 0,
+        "pal": 6
+      },
+      "L2": {
+        "on": true,
+        "bri": 80,
+        "rgb": [
+          255,
+          130,
+          170
+        ],
+        "col": [
+          255,
+          130,
+          170,
+          0
+        ],
+        "cct": 0,
+        "fx": 0,
+        "pal": 6
+      }
+    },
+    "A": {
+      "L1": {
+        "on": true,
+        "bri": 60,
+        "rgb": [
+          130,
+          195,
+          255
+        ],
+        "col": [
+          130,
+          195,
+          255,
+          0
+        ],
+        "cct": 0,
+        "fx": 0,
+        "pal": 16
+      },
+      "L2": {
+        "on": true,
+        "bri": 60,
+        "rgb": [
+          130,
+          195,
+          255
+        ],
+        "col": [
+          130,
+          195,
+          255,
+          0
+        ],
+        "cct": 0,
+        "fx": 0,
+        "pal": 16
+      }
+    }
+  },
+  "router": {
+    "host": "192.168.8.1",
+    "ssh_key": "~/.ssh/id_ed25519_mango"
+  },
+  "sync": {
+    "enabled": true,
+    "state": {
+      "on": true,
+      "col": [
+        0,
+        100,
+        200
+      ],
+      "bri": 153
+    }
+  },
+  "debug": false
+}

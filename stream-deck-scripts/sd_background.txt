@@ -1,6 +1,7 @@
 - Init Event
 [(init)
 {@S_funk:
+Impro,
 Tripping Out,
 Love and Happiness,
 Cissy Strut,
@@ -16,6 +17,9 @@ Use me,
 Shaft,
 Get up and stay,
 Top of my head,
+Give me the night,
+Papas GABNB,
+Memphis,
 }
 {@LowerSounds:
 0=Organ Greasy,
@@ -286,6 +290,15 @@ E_Live Combo,
 
 -- Default Songs
 {@SetIndex:1}{@Profile:Config}
+-- Consignes volume et pan, telles que la page 4 du Stream Deck les affiche. Elles
+-- vivent ICI, en variables globales, et non dans le script des deux touches : une
+-- touche ne recoit du MIDI que pendant que SA page est affichee, et son (init) rejoue
+-- a chaque fois qu'on revient dessus. Sans memoire globale, la tuile repart donc a ?
+-- des qu'on quitte la page, et le CC du reset -- envoye une seule fois, depuis un
+-- AUTRE profil -- n'a aucune chance d'etre vu. Les globales survivent aux deux.
+-- ? et 1 : au demarrage rien n'a ete constate, et pour une alarme non-constate n'est
+-- pas bon. Le vert se merite, il ne se suppose pas.
+{@VolTxt:?}{@VolEtat:1}{@PanTxt:?}{@PanEtat:1}
 ]
 
 - Name sets and map sets to songs
@@ -306,17 +319,131 @@ E_Live Combo,
 - Map songs to Ableton CC
 
 - Funk
-[(@SongText:"Tripping Out"){@SongCC:4}]
-[(@SongText:"Love and Happiness"){@SongCC:5}]
-[(@SongText:"Cissy Strut"){@SongCC:6}]
-[(@SongText:"Chameleon"){@SongCC:7}]
-[(@SongText:"Play That Funky Music"){@SongCC:8}]
-[(@SongText:"Chicken"){@SongCC:9}]
-[(@SongText:"1 Gimme Some More"){@SongCC:10}]
-[(@SongText:"2 Soul Power"){@SongCC:11}]
-[(@SongText:"3 House Party"){@SongCC:12}]
-[(@SongText:"It is On"){@SongCC:13}]
-[(@SongText:"Tive Razao"){@SongCC:14}]
+- Un bloc par morceau, une ligne par groupe de reglages :
+-   ligne 1 : scene Ableton, program change sur le canal 8, transposition globale
+-   ligne 2 : zone 1 — octave, mute, bypass
+-   ligne 3 : zone 2 — idem
+-   ligne 4 : zone 3 — idem
+- Octaves et transposition sont des offsets signes autour de 64 ; le +64 est
+- applique a l'envoi. Mute et bypass : 0 = zone active et audible, 127 = enclenche.
+- ATTENTION : jamais de parenthese, d'accolade ni de crochet dans un commentaire.
+- Le plugin ignore le texte HORS de ces caracteres, donc il INTERPRETE ce qui est
+- dedans, meme dans une ligne qui ressemble a du commentaire.
+[(@SongText:"Impro")
+  {@SongCC:3}{@SongPC:49}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Tripping Out")
+  {@SongCC:4}{@SongPC:50}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Love and Happiness")
+  {@SongCC:5}{@SongPC:51}{@SongTr:-1}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Cissy Strut")
+  {@SongCC:6}{@SongPC:52}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Chameleon")
+  {@SongCC:7}{@SongPC:53}{@SongTr:1}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Play That Funky Music")
+  {@SongCC:8}{@SongPC:54}{@SongTr:4}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"The Chicken")
+  {@SongCC:9}{@SongPC:55}{@SongTr:-2}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"1 Gimme Some More")
+  {@SongCC:10}{@SongPC:56}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"2 Soul Power")
+  {@SongCC:11}{@SongPC:57}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"3 House Party")
+  {@SongCC:12}{@SongPC:58}{@SongTr:-5}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"It is On")
+  {@SongCC:13}{@SongPC:59}{@SongTr:5}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Tive Razao")
+  {@SongCC:14}{@SongPC:60}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Use me")
+  {@SongCC:15}{@SongPC:61}{@SongTr:4}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Shaft")
+  {@SongCC:16}{@SongPC:62}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Get up and stay")
+  {@SongCC:17}{@SongPC:63}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Top of my head")
+  {@SongCC:18}{@SongPC:64}{@SongTr:2}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Give me the night")
+  {@SongCC:19}{@SongPC:65}{@SongTr:3}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Papas GABNB")
+  {@SongCC:20}{@SongPC:66}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+[(@SongText:"Memphis")
+  {@SongCC:21}{@SongPC:67}{@SongTr:0}
+  {@Z1Oct:2}{@Z1Mut:0}{@Z1Byp:0}
+  {@Z2Oct:0}{@Z2Mut:0}{@Z2Byp:0}
+  {@Z3Oct:-2}{@Z3Mut:0}{@Z3Byp:0}
+]
+
 
 - Evt
 - Map songs to Ableton CC
@@ -361,16 +488,44 @@ E_Live Combo,
 [(@SongText:"World is broken"){@SongCC:21}]
 
 - Set selection
-[(@SetIndex:*){@SongIndex:1}{@SetText:#PART(@SetIndex,@Sets)#}{@Profile:Songs}]
+- 2026-08-30 : le {@Profile:Songs} de fin de ligne est RETIRE. Choisir un set faisait
+-   basculer le Stream Deck + en meme temps que le XL : le XL pilotait l'autre appareil
+-   sans qu'on le lui demande. Pour retablir, recoller {@Profile:Songs} avant le ].
+[(@SetIndex:*){@SongIndex:1}{@SetText:#PART(@SetIndex,@Sets)#}]
 
-- Activation Profile
-[(@Profile:*){launch:#"SD_switch - "&@Profile&".app"#}]
+- Activation Profile -- COUPEE le 2026-08-30.
+-
+-   C'est le POINT DE PASSAGE UNIQUE de tout changement de profil : quelle que soit la
+-   ligne qui pose {@Profile:...}, c'est ici que le lancement de l'app fantome
+-   "SD_switch - <profil>.app" fait effectivement basculer l'appareil. Retirer les
+-   declencheurs un par un ne suffisait pas -- il en restait toujours un ailleurs, et le
+-   simple appui sur une touche de morceau du XL (nav/sd_run_songs.txt, present sur 56
+-   profils) posait encore {@Profile:Songs}.
+-
+-   Ce que ca desactive, en plus des bascules automatiques : les trois boutons qui
+-   changeaient de profil VOLONTAIREMENT -- nav/sd_song.txt, nav/sd_setlist.txt, et
+-   l'appui simple de nav/sd_run_songs.txt. Ils continuent d'afficher et de naviguer, ils
+-   ne deplacent simplement plus l'autre appareil.
+-
+-   Pour retablir, decommenter la ligne ci-dessous. Si un jour on veut garder QUELQUES
+-   bascules, c'est cette ligne qu'on remet et les appelants qu'on coupe, pas l'inverse.
+-
+- [(@Profile:*){launch:#"SD_switch - "&@Profile&".app"#}]
 
 - Song selection
 [(@SongIndex:*)
+- valeurs par défaut : écrasées juste après par la table Funk si le morceau y figure
+{@SongPC:0}{@SongTr:0}{@Z1Oct:0}{@Z2Oct:0}{@Z3Oct:0}{@Z1Mut:0}{@Z1Byp:0}{@Z2Mut:0}{@Z2Byp:0}{@Z3Mut:0}{@Z3Byp:0}
 {@SongText:#PART(@SongIndex,@Songs)#}
-- update other stream deck profile
-{@Profile:#@SongText#}
+- update other stream deck profile -- RETIRE le 2026-08-30, meme raison que ci-dessus :
+-   c'etait la ligne qui faisait suivre le Stream Deck + a chaque changement de morceau,
+-   qu'il vienne d'un appui long sur le XL ou d'un clic dans le profil Songs. Elle
+-   demandait en plus le lancement d'un "SD_switch - <titre>.app" qui n'existe pas pour
+-   la plupart des morceaux. Pour retablir : {@Profile:#@SongText#}
+-
+-   Le MECANISME lui-meme est intact ([(@Profile:*)...] plus haut) : les boutons qui
+-   changent de profil VOLONTAIREMENT -- sd_song.txt, sd_setlist.txt, sd_run_songs.txt --
+-   marchent toujours. Seules les deux bascules AUTOMATIQUES sont supprimees.
 - manage rendering with line break
 {@SongTextML:#SUBSTITUTE(@SongText," ",CHAR(10))#}
 - compute previous and next text
@@ -383,14 +538,132 @@ E_Live Combo,
 {@SongTextMLNext:#IF(@SongNextOOL=1," ",SUBSTITUTE(@SongTextNext," ",CHAR(10)))#}
 ]
 
+- Reset clavier — BLOC PARTAGE, appele par trois chemins :
+-   . le chargement d'un morceau, via @SongLoad ci-dessous
+-   . le bouton CLEAN, dans silence/sd_clean.txt
+-   . le bouton STOP, dans silence/sd_omni_stop.txt
+- CLEAN et STOP lancent les scenes 0 et 1 sans passer par @SongLoad : sans ce bloc
+- partage ils ne resetteraient rien. C'est le SEUL reset du rig, et il part meme
+- quand Ableton ne repond pas. Tout est sur le canal 2, celui des zones.
+- NE JAMAIS remettre de MIDI CC dans le macro ClyphX G_FNK : il joue au lancement
+- de la scene, donc APRES ce bloc, et ecraserait ses valeurs en silence.
+[(@Reset:*)
+-   CC 64 : sustain, pedale forte relachee
+  {cc:2,64,0}
+-   CC 66 : sostenuto relache
+  {cc:2,66,0}
+-   CC 67 : pedale douce relachee
+  {cc:2,67,0}
+-   CC 1 : molette de modulation a zero
+  {cc:2,1,0}
+-   CC 2 : breath controller a zero. Sans lui, un souffle reste en l'air sur un
+-     SWAM se reporte sur le morceau suivant. Le premier 2 est le CANAL, le
+-     second le NUMERO de CC : ce n'est pas une coquille. Le LSB, CC 34, est
+-     volontairement omis : avec le MSB a 0 il vaut au pire 127 sur 16383, et
+-     rien dans le rig ne l'emet ni ne l'ecoute.
+  {cc:2,2,0}
+-   CC 7 : volume au maximum. Ajoute le 2026-08-30. Jusque-la le rig ne touchait
+-     PAS au CC 7 : le volume passait uniquement par ClyphX (VOL 100 dans $NORM$,
+-     VOL 107 dans $G_FNK$) et par track_set_volume de BenActions.py, qui agissent
+-     sur le volume de PISTE d'Ableton et n'emettent aucun message MIDI. La tuile
+-     VOLUME de la page 4 du Stream Deck ne pouvait donc jamais verdir, faute de
+-     source. 127 est le maximum MIDI, pas le 0 dB d'une piste : si un instrument
+-     ecoute reellement ce CC, il repart a fond apres chaque reset — a verifier au
+-     son sur un SWAM et sur Omnisphere avant de considerer la chose acquise.
+  {cc:2,7,127}
+-     La consigne vient d'etre posee : on l'inscrit dans la memoire globale que lit
+-     la tuile VOLUME de la page 4.
+  {@VolTxt:127}{@VolEtat:0}
+-   CC 10 : pan recentre. Homonyme du talkback XR18, dans XR18/sd_talk.txt, qui
+-     utilise aussi le CC 10 du canal 2 — sans conflit : ce script sort sur le
+-     port Ableton Loopback et le talkback sur le port XR18. Ne pas corriger
+-     l'un en croyant a un doublon.
+  {cc:2,10,64}
+-     Idem pour la tuile PAN, qui affiche l'ecart signe : au repos, zero.
+  {@PanTxt:0}{@PanEtat:0}
+-   Pression du canal, aftertouch, a zero
+  {cp:2,0}
+-   Pitch bend recentre. Plage 0 a 16383, donc 8192 au centre. La doc du plugin
+-     donne 64 en exemple, c'est faux ; la valeur est confirmee par la fonction
+-     reset_pitchbend de BenActions.py, qui envoie MSB 64 et LSB 0, soit 8192.
+  {pb:2,8192}
+-   CC 123 : toutes notes relachees. Volontairement PAS de CC 120, All Sound Off,
+-     qui coupe net et s'entend comme un clic sur une nappe ou un SWAM. Ni de
+-     CC 121, Reset All Controllers, qui toucherait l'expression CC 11 que les
+-     SWAM pilotent en continu au souffle.
+  {cc:2,123,0}
+]
+
 - Load Song on ableton
 [(@SongLoad:*)
-{cc:1,2,#@SongCC#}{noteon:1,38,127}
+-   1. RESET du clavier, via le bloc partage ci-dessus
+  {@Reset:1}
+-
+-   2. VALEURS DU MORCEAU. Apres le reset : dans l'autre ordre il effacerait ce
+-      qu'on vient d'envoyer. Numeros de CC issus de la carte de BenActions.py,
+-      bloc bas, tout sur le canal 2.
+-
+-   Program change canal 8 : valeur = nom du clip de la piste Song dans Ableton
+  {pc:8,#@SongPC#}
+-   CC 102 : Tone GLOBAL, transposition en demi-tons. Centre sur 64, d'ou le +64
+-     applique a l'offset signe stocke dans la table Funk.
+  {cc:2,102,#@SongTr+64#}
+-   CC 103 : octave zone 1, meme convention d'offset signe autour de 64
+  {cc:2,103,#@Z1Oct+64#}
+-   CC 104 : mute zone 1
+  {cc:2,104,#@Z1Mut#}
+-   CC 105 : bypass zone 1
+  {cc:2,105,#@Z1Byp#}
+-   CC 106 : octave zone 2
+  {cc:2,106,#@Z2Oct+64#}
+-   CC 107 : mute zone 2
+  {cc:2,107,#@Z2Mut#}
+-   CC 108 : bypass zone 2
+  {cc:2,108,#@Z2Byp#}
+-   CC 109 : octave zone 3
+  {cc:2,109,#@Z3Oct+64#}
+-   CC 110 : mute zone 3, les Brass Ens stabs
+  {cc:2,110,#@Z3Mut#}
+-   CC 111 : bypass zone 3
+  {cc:2,111,#@Z3Byp#}
+-
+-   3. BORNES DE SPLIT, en dur et identiques pour tous les morceaux,
+-      contrairement aux octaves qui vivent dans la table. La note K correspond
+-      au CC 111 plus K, et la valeur est un numero de note MIDI. Les reposer
+-      garantit des zones aux bonnes bornes meme si quelque chose les a
+-      deplacees pendant le morceau precedent. Convention Ableton : C3 = 60.
+-
+-   CC 112 : note-borne 1, C-2, bas du clavier
+  {cc:2,112,0}
+-   CC 113 : note-borne 2, C2
+  {cc:2,113,48}
+-   CC 114 : note-borne 3, C3, do central
+  {cc:2,114,60}
+-   CC 115 : note-borne 4, C5
+  {cc:2,115,84}
+-   CC 116 : note-borne 5, C#7
+  {cc:2,116,109}
+-
+-   4. LANCEMENT
+-
+-   CC 2 sur le canal 1 : selection de la scene Ableton. La valeur @SongCC EST le
+-     numero de scene : 3 = Impro, 4 = Tripping out, ... 21 = Memphis.
+  {cc:1,2,#@SongCC#}
+-   Note 38 canal 1 : declenchement de la scene selectionnee
+  {noteon:1,38,127}
 ]
+
 
 - BUTTON : PREV
 [(@Nav:Prev){@SongIndex:#IF(@SongPrevOOL=1,@SongIndex,@SongIndex-1)#}]
 - BUTTON : NEXT
 [(@Nav:Next){@SongIndex:#IF(@SongNextOOL=1,@SongIndex,@SongIndex+1)#}]
 - BUTTON : PLAY
-[(@Nav:Run){@SongLoad:1}{@Profile:Live}]
+- 2026-08-30 : le basculement automatique vers le profil Live est DESACTIVE. Charger un
+-   morceau ne doit plus deplacer l'ecran sous les doigts de celui qui joue : on decide
+-   soi-meme quand on passe en Live. Le mecanisme reste entier, seul le declencheur est
+-   retire -- pour le retablir, remettre {@Profile:Live} en fin de ligne ci-dessous.
+- Voisine a connaitre : la selection d'un morceau, plus haut, fait encore
+-   {@Profile:#@SongText#}. Elle se declenche a la NAVIGATION, pas au chargement, et n'a
+-   donc pas ete touchee -- si l'ecran bouge encore, c'est elle.
+[(@Nav:Run){@SongLoad:1}]

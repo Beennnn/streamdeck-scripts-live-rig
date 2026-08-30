@@ -1,0 +1,40 @@
+{
+  "port_name": "LumiDeck",
+  "channels": {
+    "1": "all",
+    "2": "front",
+    "3": "back",
+    "4": "L1",
+    "5": "L2"
+  },
+  "notes": {
+    "60": "jaune",
+    "61": "violet",
+    "62": "orange",
+    "63": "bleuclair",
+    "64": "rouge",
+    "65": "vert",
+    "66": "rose",
+    "67": "bleu",
+    "48": "off",
+    "50": "on",
+    "52": "toggle",
+    "53": "blackout",
+    "55": "restore",
+    "56": "mode:music",
+    "57": "animstop",
+    "58": "flash:blanc@300",
+    "59": "cycle:jaune,violet,rouge,vert@800"
+  },
+  "cc": {
+    "1": "bri",
+    "2": "cct",
+    "3": "hue",
+    "4": "sat",
+    "5": "fx",
+    "6": "sx",
+    "7": "ix"
+  },
+  "programs": [],
+  "clock_tempo": true
+}

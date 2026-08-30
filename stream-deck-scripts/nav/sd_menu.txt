@@ -77,6 +77,9 @@
 [(selectedfromlist:Shaft){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
 [(selectedfromlist:Get up and stay){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
 [(selectedfromlist:Top of my head){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Give me the night){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Papas GABNB){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
+[(selectedfromlist:Memphis){@SongIndex:#@e_selectedindex-1#}{@SongLoad:1}]
 
 - On back selection 
 [(selectedfromlist:<){showlist:#@Sets#,focus=#@SetText#}]

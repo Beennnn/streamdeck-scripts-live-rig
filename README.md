@@ -73,3 +73,7 @@ Tools and contributions that came out of building this rig:
   <i>The rig's job is to <b>disappear</b> — to make "next song" a single, reliable gesture,<br>
   and to never be the reason a set stops.</i>
 </p>
+
+> **Snapshot, not a working copy.** `stream-deck-scripts/` mirrors the scripts my
+> Stream Deck actually runs, refreshed on 2026-08-30. It is here to be read, not
+> restored — the live copy lives outside this repo and moves faster than it.
