@@ -1,0 +1,347 @@
+{
+ "Controllers": [
+  {
+   "Actions": {
+    "0,0": {
+     "ActionID": "62c1ea97-4fbf-4e31-8807-711c4cf9bccc",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (touche)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "jaune",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_jaune.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "1,0": {
+     "ActionID": "5d7da377-e96a-4b40-92ea-f944ce65a093",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (touche)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "violet",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_violet.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "2,0": {
+     "ActionID": "84a84be6-67f0-42f2-a70b-56ee85cf4cd6",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (touche)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "orange",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_orange.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "3,0": {
+     "ActionID": "02d7c8ca-dc65-4051-b4ac-9204532acf4b",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (touche)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "bleuclair",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_bleuclair.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "0,1": {
+     "ActionID": "bc75a696-088a-463d-9fb0-d4848e63f2ba",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (touche)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "rouge",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_rouge.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "1,1": {
+     "ActionID": "8bfc43d7-b56b-41f7-8b7d-c0dba2310cb8",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (touche)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "vert",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_vert.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "2,1": {
+     "ActionID": "ecdc9bde-ccaf-4292-b9ca-6d4a1b0e4419",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (touche)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "rose",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_rose.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "3,1": {
+     "ActionID": "77bfb480-8151-4816-8552-53d54fc0a4b7",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (touche)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "bleu",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_bleu.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    }
+   },
+   "Type": "Keypad"
+  },
+  {
+   "Actions": {
+    "0,0": {
+     "ActionID": "0cf48227-9455-4c11-8000-a03764be090d",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (molette)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "mode": "couleur",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {}
+     ],
+     "UUID": "com.benlab.lamps.dial"
+    },
+    "1,0": {
+     "ActionID": "73a40afc-3e12-46f5-aebc-ab0dcbba02cf",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (molette)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "mode": "intensite",
+      "lamps": []
+     },
+     "State": 0,
+     "States": [
+      {}
+     ],
+     "UUID": "com.benlab.lamps.dial"
+    },
+    "2,0": {
+     "ActionID": "d35fae03-1108-4a73-90b7-9764feacc76e",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (molette)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "mode": "intensite",
+      "lamps": [
+       "L1"
+      ]
+     },
+     "State": 0,
+     "States": [
+      {}
+     ],
+     "UUID": "com.benlab.lamps.dial"
+    },
+    "3,0": {
+     "ActionID": "2be7b80c-9aa7-4e7c-ac8a-8c1dd7bbb712",
+     "LinkedTitle": false,
+     "Name": "Lampe LED (molette)",
+     "Plugin": {
+      "Name": "Lampes LED locales (Tuya / WLED)",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.1.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "mode": "intensite",
+      "lamps": [
+       "L2"
+      ]
+     },
+     "State": 0,
+     "States": [
+      {}
+     ],
+     "UUID": "com.benlab.lamps.dial"
+    }
+   },
+   "Type": "Encoder"
+  }
+ ],
+ "Name": "Lampes"
+}

@@ -1,0 +1,15 @@
+{
+ "Device": {
+  "Model": "20GBD9901",
+  "UUID": "@(1)[4057/132/A00WA4411KZUFJ]"
+ },
+ "Name": "Lampes SD+",
+ "Pages": {
+  "Current": "f438b6aa-a4b8-46b0-9536-6912829005b8",
+  "Default": "f438b6aa-a4b8-46b0-9536-6912829005b8",
+  "Pages": [
+   "f438b6aa-a4b8-46b0-9536-6912829005b8"
+  ]
+ },
+ "Version": "3.0"
+}

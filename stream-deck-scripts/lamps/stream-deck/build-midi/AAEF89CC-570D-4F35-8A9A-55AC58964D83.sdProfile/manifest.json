@@ -1,0 +1,15 @@
+{
+ "Device": {
+  "Model": "20GAT9901",
+  "UUID": "@(1)[4057/108/CL13L2A01061]"
+ },
+ "Name": "Lampes scene (MIDI)",
+ "Pages": {
+  "Current": "d915cb42-d2ac-4e78-83f9-c1f1ad173cff",
+  "Default": "d915cb42-d2ac-4e78-83f9-c1f1ad173cff",
+  "Pages": [
+   "d915cb42-d2ac-4e78-83f9-c1f1ad173cff"
+  ]
+ },
+ "Version": "3.0"
+}

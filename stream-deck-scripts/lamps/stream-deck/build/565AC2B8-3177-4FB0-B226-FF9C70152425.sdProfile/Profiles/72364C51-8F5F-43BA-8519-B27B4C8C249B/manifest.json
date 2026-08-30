@@ -1,0 +1,670 @@
+{
+ "Controllers": [
+  {
+   "Actions": {
+    "0,0": {
+     "ActionID": "43988dd7-239c-4a3f-941f-9130b44a872d",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "jaune"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_jaune.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "1,0": {
+     "ActionID": "77d334fc-e176-4243-a57c-a42052e1e50c",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "violet"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_violet.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "2,0": {
+     "ActionID": "e3cbd0f3-7bb5-40c4-9623-e99ac5db0973",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "orange"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_orange.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "3,0": {
+     "ActionID": "0a53f2d7-8c1f-4ebb-bad1-26cdab3aefea",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "bleuclair"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_bleuclair.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "4,0": {
+     "ActionID": "1e88d198-dba7-477e-ab21-faec14305cb1",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "rouge"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_rouge.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "5,0": {
+     "ActionID": "651a967f-4521-4d36-9648-72096ab6fbf1",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "vert"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_vert.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "6,0": {
+     "ActionID": "fbb1b306-b3a9-4ebe-bbc2-b0b4ff750c80",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "rose"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_rose.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "7,0": {
+     "ActionID": "a9687fb6-86cb-4a3e-842b-18f418a12240",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "bleu"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_bleu.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "0,1": {
+     "ActionID": "1d2a4930-146b-436f-bed3-ea4559512408",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "lueur"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_lueur.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "1,1": {
+     "ActionID": "251ae8f3-1b04-4494-a8f6-3d1d7ca56b22",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "veilleuse"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_veilleuse.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "2,1": {
+     "ActionID": "47a3f1b7-30bf-4efd-bdc8-82e70714bd0a",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "tamise"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_tamise.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "3,1": {
+     "ActionID": "3235c325-46c8-406e-9ac4-6a6fa6914401",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "moyen"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_moyen.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "4,1": {
+     "ActionID": "957bef05-08e7-4c2e-9b50-102d7ea783ab",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "fort"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_fort.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "5,1": {
+     "ActionID": "18422e4d-926e-4acc-9b2d-a51c65eb053f",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "max"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_max.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "6,1": {
+     "ActionID": "5fca0a88-eac2-48c3-ab39-6ae7b0e11a7a",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "on"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/on.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "7,1": {
+     "ActionID": "c6c035ba-ac09-4a7f-abc5-36ef9c61a617",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "off"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/off.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "0,2": {
+     "ActionID": "444225e6-c985-4ad4-950f-803015ae86cf",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "mode:white"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/mode_white.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "1,2": {
+     "ActionID": "83277d06-1c6c-44ea-9d4e-956eb153d5c1",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "mode:colour"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/mode_colour.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "2,2": {
+     "ActionID": "e16162ce-4e75-40fc-9453-0ede7e6a26a5",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "mode:scene"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/mode_scene.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "3,2": {
+     "ActionID": "bbff090e-e1cc-4bc1-88ee-699e772576f9",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "mode:music"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/mode_music.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "5,2": {
+     "ActionID": "d3009173-6edc-4534-b065-3942c594c202",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "set:rouge:100"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/set_rouge100.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    },
+    "6,2": {
+     "ActionID": "5f16f6e1-35ff-4038-b0a3-3cefb195864f",
+     "LinkedTitle": false,
+     "Name": "Lampe Tuya",
+     "Plugin": {
+      "Name": "Lampes Tuya",
+      "UUID": "com.benlab.lamps",
+      "Version": "1.0.0"
+     },
+     "Resources": null,
+     "Settings": {
+      "cmd": "set:bleu:30"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/set_bleu30.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "com.benlab.lamps.action"
+    }
+   },
+   "Type": "Keypad"
+  }
+ ],
+ "Name": "Lampes"
+}

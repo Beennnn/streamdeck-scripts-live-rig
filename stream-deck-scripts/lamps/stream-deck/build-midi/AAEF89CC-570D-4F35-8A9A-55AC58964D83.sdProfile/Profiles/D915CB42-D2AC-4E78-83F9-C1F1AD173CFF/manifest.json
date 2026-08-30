@@ -1,0 +1,1110 @@
+{
+ "Controllers": [
+  {
+   "Actions": {
+    "0,0": {
+     "ActionID": "2f7367d6-1a5d-47b6-99cd-afeb6c1a9288",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,60,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_jaune.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "1,0": {
+     "ActionID": "882622a0-e5f6-4c13-b088-b74347fd2a74",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,61,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_violet.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "2,0": {
+     "ActionID": "44f29214-f1a8-4734-8242-3d31090acfb7",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,62,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_orange.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "3,0": {
+     "ActionID": "f368d392-94f1-4634-a75e-68b74a428ee9",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,63,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_bleuclair.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "4,0": {
+     "ActionID": "7c5c6ffc-fcb2-467a-973b-a0b2947d81ac",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,64,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_rouge.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "5,0": {
+     "ActionID": "8a2dd66b-f68d-46c4-bf58-94206d92c391",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,65,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_vert.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "6,0": {
+     "ActionID": "7becfd15-a86a-4b7e-9eba-6c3e937c767c",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,66,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_rose.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "7,0": {
+     "ActionID": "280eb145-b5bd-4b04-a972-b8e1bb0f097c",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,67,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/col_bleu.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "0,1": {
+     "ActionID": "f5200ba7-8715-46eb-baf2-fc4ba29e763b",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){cc:1,1,1}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_lueur.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "1,1": {
+     "ActionID": "42ea5199-e21a-442d-b60c-205ba342da35",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){cc:1,1,13}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_veilleuse.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "2,1": {
+     "ActionID": "7ad07af8-23b8-474e-ac72-eac4220a3249",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){cc:1,1,38}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_tamise.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "3,1": {
+     "ActionID": "7ce4d445-d834-42ac-89de-bd36646e3ef9",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){cc:1,1,70}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_moyen.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "4,1": {
+     "ActionID": "a1a1ee05-c518-4000-a7a2-f74345864ec8",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){cc:1,1,102}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_fort.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "5,1": {
+     "ActionID": "1a957144-37d3-400b-bc36-c57efc9d3550",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){cc:1,1,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/pal_max.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "6,1": {
+     "ActionID": "89d97a65-3d3f-4eaa-843a-5cd1a24e1763",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,50,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/on.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "7,1": {
+     "ActionID": "d3662986-3b53-45f2-8455-aa5a19fd2c85",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,48,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/off.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "0,2": {
+     "ActionID": "6edd180c-f489-45ec-bfb5-d204ee0859fe",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,56,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/x_music.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "1,2": {
+     "ActionID": "e22d6227-cf8a-4231-8532-6e56dfab0ade",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,58,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/x_flash.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "2,2": {
+     "ActionID": "ec197ff4-f422-41b6-98de-6d1e046dcce1",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,59,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/x_cycle.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "3,2": {
+     "ActionID": "c64df4bc-28d9-420e-8342-e1dd303cb072",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,57,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/x_stop.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "5,2": {
+     "ActionID": "3c0e1824-96b6-4fd7-894f-8301ce1089a5",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,64,127}{cc:1,1,127}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/set_rouge100.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    },
+    "6,2": {
+     "ActionID": "acbc3cf4-cfb8-4b37-923c-6bfe5e26c9e6",
+     "LinkedTitle": false,
+     "Name": "Script",
+     "Plugin": {
+      "Name": "MIDI",
+      "UUID": "se.trevligaspel.midi",
+      "Version": "3.5.1"
+     },
+     "Resources": null,
+     "Settings": {
+      "a1": null,
+      "el": false,
+      "i9": false,
+      "i9h": "",
+      "lf": false,
+      "mi": [],
+      "mo": [],
+      "pds": [],
+      "pv": "3.5.1",
+      "sds": true,
+      "sf": null,
+      "sff": "",
+      "shf": false,
+      "sm": "",
+      "smi": "",
+      "smo": "LumiDeck",
+      "spds": "Select",
+      "spw": "",
+      "ss": true,
+      "ssm": false,
+      "xt": "[(press){noteon:1,67,127}{cc:1,1,38}]\n"
+     },
+     "State": 0,
+     "States": [
+      {
+       "FontFamily": "",
+       "FontSize": 16,
+       "FontStyle": "",
+       "FontUnderline": false,
+       "Image": "Images/set_bleu30.png",
+       "OutlineThickness": 2,
+       "ShowTitle": true,
+       "Title": "",
+       "TitleAlignment": "bottom",
+       "TitleColor": "#ffffff"
+      }
+     ],
+     "UUID": "se.trevligaspel.midi.script"
+    }
+   },
+   "Type": "Keypad"
+  }
+ ],
+ "Name": "Lampes MIDI"
+}
