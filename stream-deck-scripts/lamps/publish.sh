@@ -23,7 +23,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>" && git push -q && echo "
 }
 
 echo "publish: Drive -> repos OpenLamp"
-sync_one openlamp-engine \
+sync_one openlamp-engine-node \
   sd-plugin/engine.py:engine.py sd-plugin/daemon.py:daemon.py \
   sd-plugin/run-headless.sh:run-headless.sh lamp.py:lamp.py \
   sd-plugin/com.benlab.lumideck-daemon.plist:com.benlab.lumideck-daemon.plist

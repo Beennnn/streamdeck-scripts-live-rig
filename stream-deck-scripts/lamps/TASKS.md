@@ -2,7 +2,7 @@
 
 Architecture actuelle (2026-07-04) : famille **OpenLamp**, 1 repo par couche —
 [openlamp](https://github.com/openlamp/openlamp) (parapluie) ·
-[openlamp-engine](https://github.com/openlamp/openlamp-engine-python) (moteur+démon+CLI) ·
+[openlamp-engine-node](https://github.com/openlamp/openlamp-engine-python) (moteur+démon+CLI) ·
 [lumideck](https://github.com/openlamp/streamdeck-plugin-lumideck) (Stream Deck) ·
 [openlamp-midi](https://github.com/openlamp/openlamp-lib-beatsync) (MIDI musiciens).
 Le moteur est extrait dans `engine.py` (hook `on_change` = seul lien vers le
@@ -11,7 +11,7 @@ frontal) ; test d'intégration vert post-extraction. Règle : UN hôte à la foi
 
 ## À faire
 
-- ◐ **Moteur JS** : porté (engine.js 1128 LOC sur tuyapi, 25 assertions mock vertes ; persisté dans `engine-js/` du Drive + `js/` d'openlamp-engine). ☐ Validation live BLOQUÉE 2026-07-04 11:10 : les DEUX lampes ont disparu du réseau (ni Mango ni box, ARP muet, déauth sans objet — plus associées) → power-cycle physique requis (Benoît), puis re-test : quitter SD, `node engine-js/engine.js`, `curl 127.0.0.1:8377/cmd?c=vert`. Questions ouvertes dans js/README.md (signature session morte via tuyapi, DP24 hex brut, négo 3.5).
+- ◐ **Moteur JS** : porté (engine.js 1128 LOC sur tuyapi, 25 assertions mock vertes ; persisté dans `engine-js/` du Drive + `js/` d'openlamp-engine-node). ☐ Validation live BLOQUÉE 2026-07-04 11:10 : les DEUX lampes ont disparu du réseau (ni Mango ni box, ARP muet, déauth sans objet — plus associées) → power-cycle physique requis (Benoît), puis re-test : quitter SD, `node engine-js/engine.js`, `curl 127.0.0.1:8377/cmd?c=vert`. Questions ouvertes dans js/README.md (signature session morte via tuyapi, DP24 hex brut, négo 3.5).
 - 📌 **Donnée wedge 2026-07-04** : le blocage réseau total a touché les DEUX lampes simultanément (pas seulement L2) → renforce « fragilité partagée du modèle », et l'urgence du watchdog prise niveau 3.
 - ✅ **Build Windows via GitHub Actions** (runner windows-latest, artefact .sdPlugin 9 Mo, CI verte 2026-07-04) ; ☐ reste : test sur une vraie machine Windows (appel à testeurs) + chemin de log Windows (~/Library n'existe pas → log silencieux).
 - 🚫 **Anti-plantage niveau 3 — watchdog matériel** : BLOQUÉ matériel (pas de Shelly Plug S en stock, confirmé 2026-07-04) → ~12 €/prise à acheter avant un concert ; en attendant, `lamp-doctor.sh` + déauth niveau 1 couvrent le diagnostic/récup à distance (sauf lampe éteinte).
