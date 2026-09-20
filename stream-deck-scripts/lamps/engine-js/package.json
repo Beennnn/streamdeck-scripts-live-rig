@@ -1,5 +1,5 @@
 {
-  "name": "openlamp-engine",
+  "name": "openlamp-engine-node",
   "version": "0.1.0-draft",
   "private": true,
   "description": "OpenLamp engine — Node.js port of engine.py (Tuya + WLED local lamp control, OLS dispatcher, local API on 127.0.0.1:8377)",
