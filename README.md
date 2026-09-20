@@ -58,8 +58,8 @@ Bome fans the MIDI out to every destination.
 Tools and contributions that came out of building this rig:
 
 - 🎻 **[swam-toolkit](https://github.com/Beennnn/swam-toolkit)** — SWAM (Audio Modeling) MIDI-mapping automation (shared on the VI-Control community)
-- 🔌 **[als-wire](https://github.com/Beennnn/als-wire)** — batch-wire plugin params to macros/MIDI directly in Ableton `.als` files
-- 🎹 **[zone-m4l](https://github.com/Beennnn/zone-m4l)** — Max for Live keyboard split / zone MIDI effect
+- 🔌 **[als-wire](https://github.com/Beennnn/ableton-als-wire)** — batch-wire plugin params to macros/MIDI directly in Ableton `.als` files
+- 🎹 **[zone-m4l](https://github.com/Beennnn/ableton-m4l-zone)** — Max for Live keyboard split / zone MIDI effect
 - 🎼 **[MuseScore scores](https://musescore.com/user/39593079)** — sheet music I've published
 - 🎚️ **[trevligaspel forum](https://forum.trevligaspel.se/)** — Stream Deck MIDI plugin community
 
