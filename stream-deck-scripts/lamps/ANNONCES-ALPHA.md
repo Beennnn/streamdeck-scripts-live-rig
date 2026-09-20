@@ -1,6 +1,6 @@
 # Annonces alpha LumiDeck — prêtes à coller
 
-Lien release : https://github.com/openlamp/lumideck/releases/tag/v0.1.0-alpha
+Lien release : https://github.com/openlamp/streamdeck-plugin-lumideck/releases/tag/v0.1.0-alpha
 
 ---
 
@@ -12,7 +12,7 @@ Lien release : https://github.com/openlamp/lumideck/releases/tag/v0.1.0-alpha
 >
 > Keys for color / brightness / white / scenes / blackout, a live "Light Status" key, a multi-function dial, per-lamp targeting, snapshots, and even a MIDI bridge so Ableton can drive the lights.
 >
-> macOS (universal) alpha, self-contained: https://github.com/openlamp/lumideck/releases/tag/v0.1.0-alpha
+> macOS (universal) alpha, self-contained: https://github.com/openlamp/streamdeck-plugin-lumideck/releases/tag/v0.1.0-alpha
 > WLED support is in but untested — **testers with WLED hardware very welcome** 🙏
 > Feedback super welcome, it's day one!
 
@@ -31,7 +31,7 @@ Lien release : https://github.com/openlamp/lumideck/releases/tag/v0.1.0-alpha
 > - Bonus: a MIDI bridge so Ableton/any DAW can drive the lights in sync
 >
 > macOS universal, self-contained (no Python to install):
-> https://github.com/openlamp/lumideck/releases/tag/v0.1.0-alpha
+> https://github.com/openlamp/streamdeck-plugin-lumideck/releases/tag/v0.1.0-alpha
 >
 > It's a day-one alpha — bug reports and ideas very welcome. WLED owners: I need testers!
 > Under the hood it's a layered family (engine / Stream Deck / MIDI, one repo each):
@@ -45,7 +45,7 @@ Lien release : https://github.com/openlamp/lumideck/releases/tag/v0.1.0-alpha
 >
 > Thing is: **I don't own any WLED hardware**, so the WLED path is written but unverified. If any of you would spend 10 minutes pointing it at a WLED bulb/strip and telling me what breaks, that would be hugely helpful 🙏
 >
-> Repo + macOS alpha: https://github.com/openlamp/lumideck
+> Repo + macOS alpha: https://github.com/openlamp/streamdeck-plugin-lumideck
 > OLS spec: https://github.com/openlamp/openlamp-engine-python/blob/main/OLS.md
 > (Not affiliated with the WLED project — just building on your great open API.)
 
