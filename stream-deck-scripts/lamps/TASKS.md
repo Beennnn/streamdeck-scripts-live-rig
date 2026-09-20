@@ -2,9 +2,9 @@
 
 Architecture actuelle (2026-07-04) : famille **OpenLamp**, 1 repo par couche —
 [openlamp](https://github.com/openlamp/openlamp) (parapluie) ·
-[openlamp-engine](https://github.com/openlamp/engine) (moteur+démon+CLI) ·
+[openlamp-engine](https://github.com/openlamp/openlamp-engine-python) (moteur+démon+CLI) ·
 [lumideck](https://github.com/openlamp/lumideck) (Stream Deck) ·
-[openlamp-midi](https://github.com/openlamp/midi) (MIDI musiciens).
+[openlamp-midi](https://github.com/openlamp/openlamp-lib-beatsync) (MIDI musiciens).
 Le moteur est extrait dans `engine.py` (hook `on_change` = seul lien vers le
 frontal) ; test d'intégration vert post-extraction. Règle : UN hôte à la fois
 (plugin OU daemon.py — jamais les deux, port 8377 + créneau unique Tuya).

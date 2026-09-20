@@ -46,7 +46,7 @@ Lien release : https://github.com/openlamp/lumideck/releases/tag/v0.1.0-alpha
 > Thing is: **I don't own any WLED hardware**, so the WLED path is written but unverified. If any of you would spend 10 minutes pointing it at a WLED bulb/strip and telling me what breaks, that would be hugely helpful 🙏
 >
 > Repo + macOS alpha: https://github.com/openlamp/lumideck
-> OLS spec: https://github.com/openlamp/engine/blob/main/OLS.md
+> OLS spec: https://github.com/openlamp/openlamp-engine-python/blob/main/OLS.md
 > (Not affiliated with the WLED project — just building on your great open API.)
 
 ---
